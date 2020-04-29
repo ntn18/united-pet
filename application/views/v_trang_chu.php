@@ -4,6 +4,6 @@
 	<title>Trang chủ</title>
 </head>
 <body>
-	<p>Hello test github</p>
+	<p>Hi test github</p>
 </body>
 </html>
