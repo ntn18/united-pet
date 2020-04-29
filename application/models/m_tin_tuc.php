@@ -1,23 +1,20 @@
 <?php 
 	class m_tin_tuc extends CI_Model {
-		// Mục đích lấy tin tức theo loại tin
-		public function lay_tin_tuc_theo_loai_tin($id_loai_tin)
-        {
-			// Viết câu lệnh truy vấn SQL lấy các tin tức sự kiện (có mã loai_tin_id)
-			$query = $this->db->query("
-				SELECT * 
-				FROM tbl_news
-				WHERE id_loai_tin=".$id_loai_tin."
+		
+		// Lấy toàn bộ tin tức
+		public function lay_danh_sach_tin_tuc()
+		{
+			$query= $this->db->query("
+				SELECT * FROM tbl_news
 			");
 
-			// Trả kết quả truy vấn dữ liệu
-            return $query->result();
-        }
+			return $query->result();
+		}
 
         // Mục đích Lấy tin tức theo ID
 		public function lay_tin_tuc_theo_ID($id)
         {
-			// Viết câu lệnh truy vấn SQL lấy các tin tức sự kiện (có mã loai_tin_id)
+			// Viết câu lệnh truy vấn SQL lấy các tin tức
 			$query = $this->db->query("
 				SELECT * 
 				FROM tbl_news
@@ -31,7 +28,6 @@
 		public function them_moi_tin_tuc()
         {
 			// Dữ liệu thu được từ FORM nhập dữ liệu
-			$id_loai_tin = $_POST['txtLoaiTinTuc'];
 			$tieu_de = $_POST['txtTieuDe'];
 			$mo_ta = $_POST['txtMoTa'];
 			$noi_dung = $_POST['txtNoiDung'];
@@ -57,7 +53,6 @@
 
 			// Đẩy dữ liệu này vào CSDL
 			$data = array(
-				'id_loai_tin' => $id_loai_tin,
 				'tieu_de' => $tieu_de,
 				'anh_minh_hoa' => $data["image"],
 				'mo_ta' => $mo_ta,
@@ -72,7 +67,6 @@
         {
         	// Dữ liệu thu được từ FORM nhập dữ liệu
 			$id = $_POST['txtID'];
-			$id_loai_tin = $_POST['txtLoaiTinTuc'];
 			$tieu_de = $_POST['txtTieuDe'];
 			$mo_ta = $_POST['txtMoTa'];
 			$noi_dung = $_POST['txtNoiDung'];
@@ -101,14 +95,12 @@
 		    if($data["image"] == '')
 		    {
 				$data = array(
-					'id_loai_tin' => $id_loai_tin,
 					'tieu_de' => $tieu_de,
 					'mo_ta' => $mo_ta,
 					'noi_dung' => $noi_dung
 				);
 			} else {
 				$data = array(
-					'id_loai_tin' => $id_loai_tin,
 					'tieu_de' => $tieu_de,
 					'anh_minh_hoa' => $data["image"],
 					'mo_ta' => $mo_ta,

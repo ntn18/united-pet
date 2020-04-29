@@ -2,15 +2,12 @@
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
-                            <div class="page-title-heading">
-                            </div>
+                            <h2>Quản trị tin tức</h2>
                             <div class="page-title-actions">
                                 <a href="<?=base_url();?>admin/quan_tri_tin_tuc/them_moi_tin_tuc">
                                 <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                    <span class="ladda-label">Thêm mới
-                                    </span>
-                                    <span class="ladda-spinner">
-                                    </span>
+                                    <span class="ladda-label">Thêm mới</span>
+                                    <span class="ladda-spinner"></span>
                                     <div class="ladda-progress" style="width: 0px;"></div>
                                 </button>
                                 </a>
@@ -18,7 +15,7 @@
                         </div>
                     </div>
                     <h4 class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-                        <div>Quản trị tin tức</div>
+                        <div></div>
                         <div class="col-12 col-md-3 p-0 mb-3">
                             <input type="text" class="form-control" placeholder="Tìm kiếm...">
                         </div>
@@ -26,41 +23,40 @@
                     <div class="card mb-3">
                         <div class="card-header pr-0 pl-0">
                             <div class="row no-gutters align-items-center w-100">
-                                <div class="col font-weight-bold pl-3">Tin sự kiện</div>
+                                <div class="col font-weight-bold pl-3">Danh sách tin tức</div>
                                 <div class="d-none d-md-block col-6 text-muted">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Số lượt đọc</div>
-                                        <div class="col-6">Người cập nhật tin</div>
+                                        <div class="col-3">Người đăng</div>
+                                        <div class="col-6">Ngày đăng</div>
                                         <div class="col-3">Thao tác</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <?php foreach ($tin_su_kien as $row1) {
-                        ;?>
+                        <?php foreach ($danh_sach as $key => $row) {;?>
                         <div class="card-body py-3">        
                             <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold"><?=$row1->tieu_de;?></a></div>
+                                <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold"><?=$row->tieu_de;?></a></div>
                                 <div class="d-none d-md-block col-6">        
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col-3"><?=$row1->so_luot_doc;?></div>
+                                        <div class="col-3">
+                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->tac_gia;?></a>
+                                            
+                                        </div>
                                         <div class="media col-6 align-items-center">
-                                            <img style="width: 40px; height: auto;" src="<?=base_url();?>/assets/images/<?=$row1->anh_minh_hoa;?>" alt="" class="d-block ui-w-30 rounded-circle">
                                             <div class="media-body flex-truncate ml-2">
-                                                <a href="javascript:void(0)" class="d-block text-truncate"><?=$row1->tac_gia;?></a>
-                                                <div class="text-muted small text-truncate"><?=$row1->ngay_dang;?></div>
+                                                <?=$row->ngay_dang;?>
                                             </div>
                                         </div>                                        
                                         <div class="col-3">
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/sua/<?=$row1->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/sua/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Sửa</span>
                                                 <span class="ladda-spinner"></span>
                                                 <div class="ladda-progress" style="width: 0px;"></div>
                                             </button>
                                             </a>
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/xoa/<?=$row1->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/xoa/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Xóa</span>
                                                 <span class="ladda-spinner"></span>
@@ -75,66 +71,6 @@
                         <?php   
                         }
                         ;?>
-                    </div>
-        
-                    <div class="card mb-3">
-                        <div class="card-header pl-0 pr-0">
-                            <div class="row w-100 no-gutters align-items-center">
-                                <div class="col font-weight-bold pl-3">Tin công nghệ</div>
-                                <div class="d-none d-md-block col-6 text-muted">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Số lượt đọc</div>
-                                        <div class="col-6">Người cập nhật tin</div>
-                                        <div class="col-3">Thao tác</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php foreach ($tin_cong_nghe as $row2) {
-                        ;?>
-
-                        <div class="card-body py-3">        
-                            <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold"><?=$row2->tieu_de;?></a></div>
-                                <div class="d-none d-md-block col-6">        
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-3"><?=$row2->so_luot_doc;?></div>
-                                        <div class="media col-6 align-items-center">
-                                            <img style="width: 40px; height: auto;" src="<?=base_url();?>assets/images/<?=$row2->anh_minh_hoa;?>" alt="" class="d-block ui-w-30 rounded-circle">
-                                            <div class="media-body flex-truncate ml-2">
-                                                <a href="javascript:void(0)" class="d-block text-truncate"><?=$row2->tac_gia;?></a>
-                                                <div class="text-muted small text-truncate"><?=$row2->ngay_dang;?></div>
-                                            </div>
-                                        </div>                   
-                                        <div class="col-3">
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/sua/<?=$row2->id;?>">
-                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                <span class="ladda-label">Sửa
-                                                </span>
-                                                <span class="ladda-spinner">
-                                                </span>
-                                                <div class="ladda-progress" style="width: 0px;"></div>
-                                            </button>
-                                            </a>
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/xoa/<?=$row2->id;?>">
-                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                <span class="ladda-label">Xóa
-                                                </span>
-                                                <span class="ladda-spinner">
-                                                </span>
-                                                <div class="ladda-progress" style="width: 0px;"></div>
-                                            </button>
-                                            </a>
-                                        </div>    
-                                    </div>    
-                                </div>
-                            </div>        
-                        </div>
-
-                        <?php   
-                        }
-                        ;?>                        
                     </div>
                 </div>
                 <div class="app-wrapper-footer">
