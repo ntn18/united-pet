@@ -4,6 +4,6 @@
 	<title>Trang chủ</title>
 </head>
 <body>
-	<p>TEST thử. Hóa ra CodeIgniter không khó dùng.</p>
+	<p>Hello test github</p>
 </body>
 </html>
