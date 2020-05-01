@@ -23,6 +23,7 @@ class Quan_tri_he_thong extends CI_Controller {
 
 	public function index()
 	{
+		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Quản trị United Pets";
 

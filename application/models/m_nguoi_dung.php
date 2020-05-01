@@ -12,6 +12,17 @@
 
 			// Trả kết quả truy vấn dữ liệu
             return $query->num_rows();
-        }
+		}
+		
+		public function lay_thong_tin_nguoi_dung($email, $password)
+		{
+			$query = $this->db->query("
+				SELECT * 
+				FROM tbl_user
+				WHERE email='".$email."' AND mat_khau='".$password."'
+			");
+
+			return $query->row();
+		}
 	}
 ;?>

@@ -6,6 +6,9 @@ class Quan_tri_tin_tuc extends CI_Controller {
 	{
 		parent::__construct();
 
+		// Tạo phân trang
+		$this->load->library('pagination');
+
 		// Load thư viện URL
 		$this->load->helper('url');
 
@@ -14,7 +17,6 @@ class Quan_tri_tin_tuc extends CI_Controller {
 
 		// Kết nối đến MODEL
 		$this->load->model('m_tin_tuc');
-		$this->load->model('m_loai_tin_tuc');
 
 		// Load thư viện session
 		$this->load->library('session');
@@ -26,11 +28,32 @@ class Quan_tri_tin_tuc extends CI_Controller {
 
 	public function index()
 	{
+		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Quản trị tin tức | United Pets";
 
 		// Lấy ra danh sách tin tức
 		$data['danh_sach'] = $this->m_tin_tuc->lay_danh_sach_tin_tuc();
+
+		// Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
+        $this->db->from('tbl_news');
+        $offset=$this->uri->segment(2);    
+        $limit= 2;        
+        $this->db->limit($limit, $offset);
+        $query_poster = $this->db->get();   
+			// pagination        
+        $config['base_url'] = site_url() . '/phantrang/';
+        $config['total_rows'] = $this->db->count_all('tbl_news');
+        $config['uri_segment']  = 2;
+        $config['per_page'] = $limit;
+        $config['prev_link']  = '&lt;';
+        $config['next_link']  = '&gt;';
+        $config['last_link']  = 'Cuối';
+        $config['first_link'] = 'Đầu';
+        $this->pagination->initialize($config);
+        $paginator=$this->pagination->create_links();  
+			// End pagination                      
+         $data['paginator'] = $paginator;     
 
 		// Hiển thị dữ liệu ra view
 		$this->load->view('admin/v_header', $data);
@@ -39,10 +62,29 @@ class Quan_tri_tin_tuc extends CI_Controller {
 		
 	}
 
+	// Hiển thị trang chi tiết tin tức
+	public function xem()
+	{
+		// Lấy ra ID của tin tức cần cập nhật
+		$id = $this->uri->segment(4);
+
+		// Lấy thông tin về tin tức thông qua qua MODEL
+		$data['tin_tuc'] = $this->m_tin_tuc->lay_tin_tuc_theo_ID($id);
+
+		$data['email']=$this->session->userdata('email');
+		// Khai báo tiêu đề của trang
+		$data['title'] = "Tin tức chi tiết | United Pets";
+
+		// Load ra được giao diện quản trị hệ thống
+		$this->load->view('admin/v_header', $data);
+		$this->load->view('admin/v_menu');
+		$this->load->view('admin/v_tin_tuc_chi_tiet', $data);
+	}
 
 	// Hàm này có tác dụng LOAD ra form nhập liệu
 	public function them_moi_tin_tuc()
 	{
+		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Thêm mới tin tức | United Pets";
 
@@ -72,6 +114,7 @@ class Quan_tri_tin_tuc extends CI_Controller {
 		// Lấy thông tin về tin tức thông qua qua MODEL
 		$data['tin_tuc'] = $this->m_tin_tuc->lay_tin_tuc_theo_ID($id);
 
+		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Sửa tin tức | United Pets";
 

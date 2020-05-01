@@ -5,7 +5,7 @@
 		public function lay_danh_sach_tin_tuc()
 		{
 			$query= $this->db->query("
-				SELECT * FROM tbl_news
+				SELECT * FROM tbl_news ORDER BY id DESC
 			");
 
 			return $query->result();
@@ -56,11 +56,12 @@
 				'tieu_de' => $tieu_de,
 				'anh_minh_hoa' => $data["image"],
 				'mo_ta' => $mo_ta,
-				'noi_dung' => $noi_dung
+				'noi_dung' => $noi_dung,
+				'tac_gia' => $this->session->userdata('email')
 			);
 
 			// Thực hiện chèn dữ liệu vào bảng TIN TỨC
-			$this->db->insert('tbl_tin_tuc', $data);
+			$this->db->insert('tbl_news', $data);
         }
 
 		public function sua_tin_tuc()

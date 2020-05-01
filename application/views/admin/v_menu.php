@@ -573,7 +573,7 @@
                                                                      alt="">
                                                             </div>
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Tên tài khoản
+                                                                <div class="widget-heading"><?=$email;?>
                                                                 </div>
                                                                 <div class="widget-subheading opacity-8">Dòng caption ngắn gọn
                                                                 </div>
@@ -656,12 +656,8 @@
                                 </div>
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
-                                <div class="widget-heading">
-                                    User
-                                </div>
-                                <div class="widget-subheading">
-                                    Chức vụ
-                                </div>
+                                <div class="widget-heading"><?=$email;?></div>
+                                <div class="widget-subheading">Chức vụ</div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
                                 <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">

@@ -33,10 +33,10 @@ class Dang_nhap extends CI_Controller {
 		debug_zval_dump(password);
 		
 		// Kiểm tra xem thông tin đó có KHỚP với thông tin đã lưu trong CSDL hay không?
-		if ($this->m_nguoi_dung->dem_so_ban_ghi_thu_duoc($email, $password)!=0) {
+		if ($this->m_nguoi_dung->dem_so_ban_ghi_thu_duoc($email, $password) !=0) {
 			// Tạo phiên làm việc (session); mục đích của việc tạo session giúp chúng ta xác minh 1 người có được phép truy cập vào các trang quản trị của chúng ta hay không - đảm bảo tính bảo an
 			$this->session->set_userdata('email', $email);
-
+		
 			// Thông báo cho người dùng đăng nhập thành công
 			echo 
 			"
