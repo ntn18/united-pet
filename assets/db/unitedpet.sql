@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 04, 2020 lúc 02:17 AM
+-- Thời gian đã tạo: Th5 04, 2020 lúc 05:20 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.3
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `unitedpet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_case`
+--
+
+CREATE TABLE `tbl_case` (
+  `case_id` int(11) NOT NULL,
+  `ng_bao_tin` varchar(200) DEFAULT NULL,
+  `sdt` varchar(10) NOT NULL,
+  `dia_diem_cuu` varchar(200) NOT NULL,
+  `pet_id` int(11) NOT NULL,
+  `tinh_trang_id` int(11) NOT NULL,
+  `muc_do_id` int(11) NOT NULL,
+  `tiep_nhan_id` int(11) NOT NULL,
+  `ghi_chu` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_gioi_tinh`
+--
+
+CREATE TABLE `tbl_gioi_tinh` (
+  `gioi_tinh_id` int(11) NOT NULL,
+  `ten_gioi_tinh` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -53,24 +82,31 @@ INSERT INTO `tbl_news` (`id`, `tieu_de`, `mo_ta`, `noi_dung`, `anh_minh_hoa`, `t
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_news_type`
+-- Cấu trúc bảng cho bảng `tbl_pet`
 --
 
-CREATE TABLE `tbl_news_type` (
-  `id` int(11) NOT NULL,
-  `ten_loai_tin_tuc` varchar(100) NOT NULL,
-  `ghi_chu` text DEFAULT NULL
+CREATE TABLE `tbl_pet` (
+  `pet_id` int(11) NOT NULL,
+  `ten_pet` varchar(100) NOT NULL,
+  `loai_pet_id` int(11) NOT NULL,
+  `da_nhan_nuoi_id` int(11) NOT NULL,
+  `mo_ta` text NOT NULL,
+  `chu_nuoi_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Đang đổ dữ liệu cho bảng `tbl_news_type`
+-- Cấu trúc bảng cho bảng `tbl_phan_hoi`
 --
 
-INSERT INTO `tbl_news_type` (`id`, `ten_loai_tin_tuc`, `ghi_chu`) VALUES
-(1, 'Tin về chăm sóc thú cưng', NULL),
-(2, 'Tin về các loại thú cưng', NULL),
-(3, 'Tin về tổ chức', NULL),
-(4, 'Tin tuyển dụng', NULL);
+CREATE TABLE `tbl_phan_hoi` (
+  `id` int(11) NOT NULL,
+  `ten` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `tieu_de` varchar(200) DEFAULT NULL,
+  `noi_dung` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -81,8 +117,12 @@ INSERT INTO `tbl_news_type` (`id`, `ten_loai_tin_tuc`, `ghi_chu`) VALUES
 CREATE TABLE `tbl_user` (
   `id` int(11) NOT NULL,
   `ho_ten` varchar(200) NOT NULL,
+  `gioi_tinh_id` int(11) NOT NULL,
+  `dia_chi` varchar(200) NOT NULL,
+  `sdt` varchar(10) NOT NULL,
   `email` varchar(200) NOT NULL,
   `mat_khau` varchar(200) NOT NULL,
+  `vi_tri_id` int(11) NOT NULL,
   `anh` varchar(300) DEFAULT NULL,
   `ghi_chu` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,16 +131,41 @@ CREATE TABLE `tbl_user` (
 -- Đang đổ dữ liệu cho bảng `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id`, `ho_ten`, `email`, `mat_khau`, `anh`, `ghi_chu`) VALUES
-(1, 'Thảo Nhi', 'nhint@gmail.com', '1', NULL, NULL),
-(2, 'Ngọc Anh', 'anhnn@gmail.com', '1', NULL, NULL),
-(3, 'Đan Chi', 'chittd@gmail.com', '1', NULL, NULL),
-(4, 'Hoàng Dung', 'dunght@gmail.com', '1', NULL, NULL),
-(5, 'Lâm Trần', 'lamtt@gmail.com', '1', NULL, NULL);
+INSERT INTO `tbl_user` (`id`, `ho_ten`, `gioi_tinh_id`, `dia_chi`, `sdt`, `email`, `mat_khau`, `vi_tri_id`, `anh`, `ghi_chu`) VALUES
+(1, 'Thảo Nhi', 0, '', '', 'nhint@gmail.com', '1', 0, NULL, NULL),
+(2, 'Ngọc Anh', 0, '', '', 'anhnn@gmail.com', '1', 0, NULL, NULL),
+(3, 'Đan Chi', 0, '', '', 'chittd@gmail.com', '1', 0, NULL, NULL),
+(4, 'Hoàng Dung', 0, '', '', 'dunght@gmail.com', '1', 0, NULL, NULL),
+(5, 'Lâm Trần', 0, '', '', 'lamtt@gmail.com', '1', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_vi_tri`
+--
+
+CREATE TABLE `tbl_vi_tri` (
+  `vi_tri_id` int(11) NOT NULL,
+  `ten_vi_tri` varchar(100) NOT NULL,
+  `dac_diem` text DEFAULT NULL,
+  `mo_ta` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `tbl_case`
+--
+ALTER TABLE `tbl_case`
+  ADD PRIMARY KEY (`case_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_gioi_tinh`
+--
+ALTER TABLE `tbl_gioi_tinh`
+  ADD PRIMARY KEY (`gioi_tinh_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_news`
@@ -109,9 +174,9 @@ ALTER TABLE `tbl_news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_news_type`
+-- Chỉ mục cho bảng `tbl_phan_hoi`
 --
-ALTER TABLE `tbl_news_type`
+ALTER TABLE `tbl_phan_hoi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -121,8 +186,26 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_vi_tri`
+--
+ALTER TABLE `tbl_vi_tri`
+  ADD PRIMARY KEY (`vi_tri_id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_case`
+--
+ALTER TABLE `tbl_case`
+  MODIFY `case_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_gioi_tinh`
+--
+ALTER TABLE `tbl_gioi_tinh`
+  MODIFY `gioi_tinh_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_news`
@@ -131,16 +214,22 @@ ALTER TABLE `tbl_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_news_type`
+-- AUTO_INCREMENT cho bảng `tbl_phan_hoi`
 --
-ALTER TABLE `tbl_news_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `tbl_phan_hoi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_vi_tri`
+--
+ALTER TABLE `tbl_vi_tri`
+  MODIFY `vi_tri_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
