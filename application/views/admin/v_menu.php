@@ -1038,6 +1038,13 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_cau_chuyen">
+                                    <i class="metismenu-icon pe-7s-browser"></i>
+                                    Quản trị câu chuyện
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="<?=base_url();?>admin/Quan_tri_san_pham">
                                     <i class="metismenu-icon pe-7s-plugin"></i>
                                     Quản trị sản phẩm
