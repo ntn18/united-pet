@@ -5,7 +5,7 @@
 		public function lay_danh_sach_cau_chuyen()
 		{
 			$query= $this->db->query("
-				SELECT * FROM tbl_news ORDER BY id DESC
+				SELECT * FROM tbl_story ORDER BY id DESC
 			");
 
 			return $query->result();
@@ -17,7 +17,7 @@
 			// Viết câu lệnh truy vấn SQL lấy các tin tức
 			$query = $this->db->query("
 				SELECT * 
-				FROM tbl_news
+				FROM tbl_story
 				WHERE id=".$id
 			);
 
@@ -61,7 +61,7 @@
 			);
 
 			// Thực hiện chèn dữ liệu vào bảng TIN TỨC
-			$this->db->insert('tbl_news', $data);
+			$this->db->insert('tbl_story', $data);
         }
 
 		public function sua_cau_chuyen()
@@ -111,14 +111,14 @@
 
 			// Thực hiện cập nhật dữ liệu vào bảng TIN TỨC
 			$this->db->where('id', $id);
-			$this->db->update('tbl_news', $data);
+			$this->db->update('tbl_story', $data);
         }
 
 		public function xoa_cau_chuyen($id)
         {
 			// Thực hiện việc xóa dữ liệu
 			$this->db->where('id', $id);
-			$this->db->delete('tbl_news');
+			$this->db->delete('tbl_story');
         }
 
 	}
