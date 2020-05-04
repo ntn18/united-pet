@@ -13,20 +13,20 @@
                             </div>
                             <div class="page-title-actions">
                                
-                                <div class="d-inline-block dropdown">
-                                    <button type="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                                            <i class="fa fa-business-time fa-w-20"></i>
-                                        </span>
-                                        Thêm mới
-                                    </button>
-                                    
-                                </div>
+                               <a href="<?=base_url();?>admin/quan_tri_tin_tuc/them_moi_tin_tuc">
+                                <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
+                                    <span class="ladda-label">Thêm mới</span>
+                                    <span class="ladda-spinner"></span>
+                                    <div class="ladda-progress" style="width: 0px;"></div>
+                                </button>
+                                </a>
+
                             </div>    </div>
                     </div>            <div class="main-card mb-3 card">
                         <div class="card-body">
                             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                 <thead>
+                                   
                                 <tr>
                                     <th>Họ và tên</th>
                                     <th>Giới tính</th>
@@ -34,53 +34,38 @@
                                     <th>Số điện thoại</th>
                                     <th>Email</th>
                                     <th>Vị trí công viêc</th>
+                                    <th>Thao tác</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                 <?php foreach ($danh_sach as $row) {;?>                            <tbody>
                                 <tr>
-                                    <td>Nguyễn Ngọc Anh</td>
-                                    <td>Nữ</td>
-                                    <td>Cầu Giấy,Hà Nội</td>
-                                    <td>0386097722</td>
-                                    <td>ngocanh221098mis@gmail.com</td>
-                                    <td></td>
+                                    <td><?=$row->ho_ten;?></td>
+                                    <td><?=$row->ten_gioi_tinh;?></td>
+                                    <td><?=$row->dia_chi;?></td>
+                                    <td><?=$row->sdt;?></td>
+                                    <td><?=$row->email;?></td>
+                                    <td><?=$row->vi_tri_id;?></td>
+                                    <td>
+                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/sua/<?=$row->id;?>">
+                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
+                                                <span class="ladda-label">Sửa</span>
+                                                <span class="ladda-spinner"></span>
+                                                <div class="ladda-progress" style="width: 0px;"></div>
+                                            </button>
+                                            </a>
+                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/xoa/<?=$row->id;?>">
+                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
+                                                <span class="ladda-label">Xóa</span>
+                                                <span class="ladda-spinner"></span>
+                                                <div class="ladda-progress" style="width: 0px;"></div>
+                                            </button>
+                                            </a>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>Trần Thị Đan Chi</td>
-                                    <td>Nữ</td>
-                                    <td>Long Biên, Hà Nội</td>
-                                    <td>0387420830</td>
-                                    <td>chidan1998@gmail.com</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Trần Thái Lâm</td>
-                                    <td>Nam</td>
-                                    <td>Thanh Xuân, Hà Nội</td>
-                                    <td>0344829809</td>
-                                    <td>lamtran98@gmail.com</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Hoàng Dung</td>
-                                    <td>Nữ</td>
-                                    <td>Đống Đa, Hà Nội</td>
-                                    <td>0382998921</td>
-                                    <td>hoangdung229@gmail.com</td>
-                                    <td></td>
-                                </tr>
-                                
-                            
-                                <tr>
-                                    <td>Thảo Nhi</td>
-                                    <td>Nữ</td>
-                                    <td>Hoàn Kiếm, Hà Nội</td>
-                                    <td>0394878292</td>
-                                    <td>thaonhi98@gmail.com</td>
-                                    <td></td>
-                                </tr>
-                            
-                               
+                                </tbody>
+                                <?php   
+                                }
+                                ;?>
                                                              
                             </table>
                         </div>

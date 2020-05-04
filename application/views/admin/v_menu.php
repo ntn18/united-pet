@@ -656,7 +656,7 @@
                                 </div>
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
-                                <div class="widget-heading"><?=$email;?></div>
+                                <div class="widget-heading">Email</div>
                                 <div class="widget-subheading">Chức vụ</div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
@@ -1038,9 +1038,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?=base_url();?>admin/Quan_tri_san_pham">
+                                <a href="<?=base_url();?>admin/Quan_tri_nguoi_dung">
                                     <i class="metismenu-icon pe-7s-plugin"></i>
-                                    Quản trị sản phẩm
+                                    Quản trị người dùng
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
