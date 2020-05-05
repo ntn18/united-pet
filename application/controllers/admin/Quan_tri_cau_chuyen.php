@@ -27,40 +27,28 @@ class Quan_tri_cau_chuyen extends CI_Controller {
 	}
 
 	public function index()
-	{
-		$data['email']=$this->session->userdata('email');
-		// Khai báo tiêu đề của trang
-		$data['title'] = "Quản trị câu chuyện | United Pets";
+    {
+        $data['email'] = $this->session->userdata('email');
+        // Khai báo tiêu đề của trang
+        $data['title'] = "Quản trị câu chuyện | United Pets";
+        // Phân trang
+        $config['total_rows'] = $this->m_cau_chuyen->countAll();
+        $config['base_url'] = base_url() . "admin/Quan_tri_cau_chuyen/index";
+        $config['per_page'] = 3;
+        // Lấy danh sách
+        $start = $this->uri->segment(4);
+        $data['danh_sach'] = $this->m_cau_chuyen->getListHasPaginate($config['per_page'], $start);
 
-		// Lấy ra danh sách tin tức
-		$data['danh_sach'] = $this->m_cau_chuyen->lay_danh_sach_cau_chuyen();
-
-		// Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
-        $this->db->from('tbl_story');
-        $offset=$this->uri->segment(2);    
-        $limit= 2;        
-        $this->db->limit($limit, $offset);
-        $query_poster = $this->db->get();   
-			// pagination        
-        $config['base_url'] = site_url() . '/phantrang/';
-        $config['total_rows'] = $this->db->count_all('tbl_story');
-        $config['uri_segment']  = 2;
-        $config['per_page'] = $limit;
-        $config['prev_link']  = '&lt;';
-        $config['next_link']  = '&gt;';
-        $config['last_link']  = 'Cuối';
-        $config['first_link'] = 'Đầu';
         $this->pagination->initialize($config);
-        $paginator=$this->pagination->create_links();  
-			// End pagination                      
-         $data['paginator'] = $paginator;     
+        $paginator = $this->pagination->create_links();
+        $data['paginator'] = $paginator;
 
-		// Hiển thị dữ liệu ra view
-		$this->load->view('admin/v_header', $data);
-		$this->load->view('admin/v_menu');
-		$this->load->view('admin/v_quan_tri_cau_chuyen', $data);
-		
-	}
+        // Hiển thị dữ liệu ra view
+        $this->load->view('admin/v_header', $data);
+        $this->load->view('admin/v_menu');
+        $this->load->view('admin/v_quan_tri_cau_chuyen', $data);
+
+    }
 
 	// Hiển thị trang chi tiết tin tức
 	public function xem()
