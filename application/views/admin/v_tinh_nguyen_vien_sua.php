@@ -10,7 +10,7 @@
                                         <div class="position-relative row form-group col-sm-12">
                                             <label for="exampleEmail" class="col-sm-2 col-form-label">Họ Tên</label>
                                             <div class="col-sm-10">
-                                                <input name="txthoten" type="text" class="form-control">
+                                                <input name="txthoten" type="text" class="form-control" value="<?=$tinh_nguyen_vien->ho_ten; ?>">
                                             </div>
                                        
                                         <div class="position-relative row form-group col-sm-12">
@@ -26,7 +26,7 @@
                                         <div class="position-relative row form-group col-sm-12">
                                             <label for="exampleEmail" class="col-sm-2 col-form-label">Ngày sinh</label>
                                             <div class="col-sm-10">
-                                                <input name="txtngaysinh" type="date" class="form-control">
+                                                <input name="txtngaysinh" type="date" class="form-control" value="<?=$tinh_nguyen_vien->dob; ?>">
                                             </div>
                                         </div>
 
