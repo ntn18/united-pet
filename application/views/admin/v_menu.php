@@ -1086,6 +1086,14 @@
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_chu_nuoi">
+                                    <i class="metismenu-icon pe-7s-plugin"></i>
+                                    Quản trị chủ nuôi
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

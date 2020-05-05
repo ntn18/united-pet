@@ -1,0 +1,16 @@
+/* full */
+#top {
+    max-width:100%;
+    margin:0 auto;
+    box-shadow: 0;
+    background:#fff;
+    }
+#top .navbar, 
+#top .top-bar,                        
+#top #slider,
+#top #nav,
+#top footer,
+#top #video-header{
+    max-width:100%;
+    margin:0 auto!important;
+}
