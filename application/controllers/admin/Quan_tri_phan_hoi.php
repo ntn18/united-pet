@@ -12,6 +12,9 @@ class Quan_tri_phan_hoi extends CI_Controller {
 		// Kết nối đến CSDL
 		$this->load->database();
 
+		// connect to model
+		$this->load->model('m_phan_hoi');
+
 		// Load thư viện session
 		$this->load->library('session');
 
@@ -22,6 +25,35 @@ class Quan_tri_phan_hoi extends CI_Controller {
 	
 	public function index()
 	{
+		$data['title'] = "Quản trị phản hồi | United Pets";
+		$data['danh_sach'] = $this->m_phan_hoi->lay_danh_sach_phan_hoi();
+
+		
+		$this->load->view('admin/v_header', $data);
+		$this->load->view('admin/v_menu');
 		$this->load->view('admin/v_quan_tri_phan_hoi');
 	}
+
+	// Hàm này có tác dụng thực hiện thêm mới phản hoi vào CSDL
+	public function thuc_hien_them_moi_phan_hoi()
+	{
+		// Thêm mới tin tức thông qua qua MODEL
+		$this->m_phan_hoi->them_moi_phan_hoi();
+	
+		// Cho các bạn quay về trang Quản trị tin tức
+		redirect(base_url()."Phan_hoi");
+	}
+
+	public function xoa()
+	{
+		// Lấy ra ID của tin tức cần xóa
+		$id = $this->uri->segment(4);
+
+		// Xóa tin tức thông qua MODEL
+		$this->m_phan_hoi->xoa_phan_hoi($id);
+	
+		// Cho các bạn quay về trang Quản trị tin tức
+		redirect(base_url()."admin/Quan_tri_phan_hoi");
+	}
+
 }
