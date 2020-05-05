@@ -7,21 +7,34 @@
                                     <div>
                                     <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_thu_cung/thuc_hien_them_moi_thu_cung';?>">
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tên thú cưng</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tên Pet</label>
                                             <div class="col-sm-10">
                                                 <input name="txtTenPet" class="form-control">
+                                                
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Loại thú cưng</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Loại pet</label>
                                             <div class="col-sm-10">
-                                                <input name="txtLoaiPet" class="form-control">
+                                                <select name="txtLoaiPet" class="form-control">
+                                                <option value="1">Chó</option>
+                                                <option value="2">Mèo</option>
+                                                </select>
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Đã nhận nuôi</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Giống</label>
                                             <div class="col-sm-10">
-                                                <input name="txtDaNhanNuoiID" class="form-control">
+                                                <input name="txtGiong" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tình trạng</label>
+                                            <div class="col-sm-10">
+                                                <select name="txtXuLyID" class="form-control">
+                                                <option value="1">Đã được nhận nuôi</option>
+                                                <option value="2">Chưa được nhận nuôi</option>
+                                                </select>
                                             </div>
                                         </div>
 

@@ -30,7 +30,8 @@
 			// Dữ liệu thu được từ FORM nhập dữ liệu
 			$ten_pet = $_POST['txtTenPet'];
 			$loai_pet = $_POST['txtLoaiPet'];
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
+			$giong = $_POST['txtGiong'];
+			$xu_ly_id = $_POST['txtXuLyID'];
 			$mo_ta = $_POST['txtMoTa'];
 			$chu_nuoi_id = $_POST['txtChuNuoi'];
 
@@ -57,9 +58,10 @@
 			$data = array(
 				'ten_pet' => $ten_pet,
 				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
+				'giong' => $giong,
+				'xu_ly_id' => $xu_ly_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi,
+				'chu_nuoi_id' => $chu_nuoi_id,
 				'anh' => $data["image"],
 			);
 
@@ -73,7 +75,8 @@
         	$pet_id = $_POST['txtID'];
 			$ten_pet = $_POST['txtTenPet'];
 			$loai_pet = $_POST['txtLoaiPet'];
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
+			$giong = $_POST['txtGiong'];
+			$xu_ly_id = $_POST['txtXuLyID'];
 			$mo_ta = $_POST['txtMoTa'];
 			$chu_nuoi_id = $_POST['txtChuNuoi'];
 
@@ -103,7 +106,8 @@
 				$data = array(
 				'ten_pet' => $ten_pet,
 				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
+				'giong' => $giong,
+				'xu_ly_id' => $xu_ly_id,
 				'mo_ta' => $mo_ta,
 				'chu_nuoi_id' => $chu_nuoi_id
 				);
@@ -111,7 +115,8 @@
 				$data = array(
 				'ten_pet' => $ten_pet,
 				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
+				'giong' => $giong,
+				'xu_ly_id' => $xu_ly_id,
 				'mo_ta' => $mo_ta,
 				'chu_nuoi_id' => $chu_nuoi_id,
 				'anh' => $data["image"],

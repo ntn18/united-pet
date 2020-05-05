@@ -27,7 +27,7 @@
                                 <div class="d-none d-md-block col-6 text-muted">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">Loại Pet</div>
-                                        <div class="col-6">Đã nhận nuôi</div>
+                                        <div class="col-6">Tình trạng</div>
                                         <div class="col-3">Thao tác</div>
                                     </div>
                                 </div>
@@ -40,12 +40,13 @@
                                 <div class="d-none d-md-block col-6">        
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->loai_pet_id;?></a>
+                                            <a href="javascript:void(0)" class="d-block text-truncate"><?php if ($row->loai_pet_id== 1) echo "Chó"; else echo "Mèo";?></a>
                                             
                                         </div>
+
                                         <div class="media col-6 align-items-center">
                                             <div class="media-body flex-truncate ml-2">
-                                                <?=$row->da_nhan_nuoi_id;?>
+                                                <?php if ($row->xu_ly_id==1) echo "Đã được nhận nuôi"; else echo "Chưa được nhận nuôi" ;?>
                                             </div>
                                         </div>                                        
                                         <div class="col-3">

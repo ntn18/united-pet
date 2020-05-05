@@ -11,8 +11,8 @@
                                                 <span><?=$thu_cung->loai_pet_id;?></span>
                                             </div>
                                             <div style="display: inline-block; margin-left: 100px;">
-                                                <span style="font-weight:500;">Đã nhận nuôi:</span>
-                                                <span><?=$thu_cung->da_nhan_nuoi_id;?></span>
+                                                <span style="font-weight:500;">Tình trạng:</span>
+                                                <span><?=$thu_cung->xu_ly_id;?></span>
                                             </div>
                                         </div>
 
@@ -24,6 +24,10 @@
 
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label" style="font-weight:500;">Mô tả:</label>
                                             <div class="col-sm-10"><?=$thu_cung->mo_ta;?></div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label" style="font-weight:500;">Giống:</label>
+                                            <div class="col-sm-10"><?=$thu_cung->giong;?></div>
                                         </div>
 
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label" style="font-weight:500;">Chủ nuôi:</label>

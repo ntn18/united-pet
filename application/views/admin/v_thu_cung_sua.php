@@ -8,38 +8,50 @@
                                     <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_thu_cung/thuc_hien_sua_thu_cung';?>">
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tên Pet</label>
                                             <div class="col-sm-10">
-                                                <input name="txtTenPet" class="form-control" value="<?=$thu_cung->ten_pet;?>">
+                                                <input name="txtTenPet" class="form-control">
+                                                
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Loại Pet</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Loại pet</label>
                                             <div class="col-sm-10">
-                                                <input name="txtLoaiPet" class="form-control" value="<?=$thu_cung->loai_pet_id;?>">
+                                                <select name="txtLoaiPet" class="form-control">
+                                                <option value="1">Chó</option>
+                                                <option value="2">Mèo</option>
+                                                </select>
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Đã nhận nuôi</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Giống</label>
                                             <div class="col-sm-10">
-                                                <input name="txtDaNhanNuoiID" class="form-control" value="<?=$thu_cung->da_nhan_nuoi_id;?>">
+                                                <input name="txtGiong" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tình trạng</label>
+                                            <div class="col-sm-10">
+                                                <select name="txtXuLyID" class="form-control">
+                                                <option value="1">Đã được nhận nuôi</option>
+                                                <option value="2">Chưa được nhận nuôi</option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Mô tả</label>
                                             <div class="col-sm-10">
-                                                <textarea name="txtMoTa" rows="5" class="form-control"><?=$thu_cung->mo_ta;?></textarea>
+                                                <textarea name="txtMoTa" rows="5" class="form-control"></textarea>
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Ảnh</label>
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Ảnh minh họa</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="txtAnh" class="form-control">
-                                                <img src="<?=base_url()."assets/images/pet/".$thu_cung->anh;?>" style="width: 200px; height: auto; margin-top: 10px;";?>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Chủ nuôi</label>
                                             <div class="col-sm-10">
-                                                <textarea name="txtChuNuoi" rows="50" class="form-control"><?=$thu_cung->chu_nuoi_id;?></textarea>
+                                                <input name="txtChuNuoi" class="form-control">
                                             </div>
                                         </div>
 
