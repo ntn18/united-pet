@@ -36,6 +36,24 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		// Lấy ra danh sách tin tức
 		$data['danh_sach'] = $this->m_nguoi_dung->lay_danh_sach_nguoi_dung1();
 
+        //get vi_tri
+        $data['viTri'] = $this->m_nguoi_dung->getViTri();
+
+        //get sex
+        $data['gioiTinh'] = $this->m_nguoi_dung->getSex();
+
+       	//test phan trang 
+       	$config['total_rows'] = $this->m_nguoi_dung->countAll();
+        $config['base_url'] = base_url() . "admin/Quan_tri_nguoi_dung/index";
+        $config['per_page'] = 3;
+
+		$start = $this->uri->segment(4);
+        $data['listUser'] = $this->m_nguoi_dung->getListHasPaginate($config['per_page'], $start);
+
+		$this->pagination->initialize($config);
+        $paginator = $this->pagination->create_links();
+        $data['paginator'] = $paginator;
+
 		// // Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
   //       $this->db->from('tbl_news');
   //       $offset=$this->uri->segment(2);    
@@ -71,6 +89,12 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		//$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Thêm mới người dùng | United Pets";
+		
+		//get vi_tri
+        $data['viTri'] = $this->m_nguoi_dung->getViTri();
+
+        //get sex
+        $data['gioiTinh'] = $this->m_nguoi_dung->getSex();
 
 		// Load ra được giao diện quản trị hệ thống
 		$this->load->view('admin/v_header', $data);
@@ -96,12 +120,17 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Lấy thông tin về tin tức thông qua qua MODEL
-		//$data['nguoi_dung'] = $this->m_nguoi_dung->lay_thong_tin_theo_ID($id);
+		$data['nguoi_dung'] = $this->m_nguoi_dung->getUserById($id);
 
 		//$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Sửa thông tin người dùng | United Pets";
 
+		//get vi_tri
+        $data['viTri'] = $this->m_nguoi_dung->getViTri();
+
+        //get sex
+        $data['gioiTinh'] = $this->m_nguoi_dung->getSex();
 		// Load ra được giao diện quản trị hệ thống
 		$this->load->view('admin/v_header', $data);
 		$this->load->view('admin/v_menu');

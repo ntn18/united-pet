@@ -96,5 +96,18 @@
 			return $query->result();
         }
 
+         public function getListHasPaginate($total, $start)
+    {
+        $this->db->limit($total, $start);
+        $query = $this->db->get('tbl_dki_tnv');
+        return $query->result();
+    }
+
+    public function countAll()
+     {
+      return $this->db->count_all('tbl_dki_tnv');
+    }
+
+
 	}
 ;?>

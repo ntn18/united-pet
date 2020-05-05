@@ -31,6 +31,18 @@
 			return $query->result();
 		}
 
+		public function getUserById($id)
+		{
+			$query = $this->db->query("
+				SELECT * 
+				FROM tbl_user
+				WHERE id=".$id
+			);
+
+			return $query->row();
+		}
+
+
 		// public function lay_danh_sach_nguoi_dung() {
 	 //      $query = $this->db->query("Select * from tbl_user inner join tbl_gioi_tinh on tbl_user.gioi_tinh_id = tbl_gioi_tinh.gioi_tinh_id");
 	 //      return $query->result();
@@ -83,6 +95,24 @@
 			// Thực hiện việc xóa dữ liệu
 			$this->db->where('id', $id);
 			$this->db->delete('tbl_user');
+        }
+
+        //get sex
+        public function getSex(){
+        	$query = $this->db->query("
+				SELECT * 
+				FROM tbl_gioi_tinh
+			");
+
+            return $query->result();
+        }
+
+        public function getViTri(){
+        	$query= $this->db->query("
+				SELECT * FROM tbl_vi_tri
+			");
+
+			return $query->result();
         }
 
         public function sua_nguoi_dung()
@@ -146,5 +176,20 @@
 			$this->db->update('tbl_user', $data);
         }
 
+        public function getListHasPaginate($total, $start)
+		{
+			$this->db->limit($total, $start);
+			$query = $this->db->get('tbl_user');
+			return $query->result();
+		}
+
+		public function countAll() 
+		{
+			return $this->db->count_all('tbl_user');
+		}
+
+
 	}
+
+
 ;?>

@@ -67,33 +67,50 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Thông tin người dùng</h5>
                                     <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_nguoi_dung/thuc_hien_sua_nguoi_dung';?>">
-                                        <div class="form-row">
-
-
-
-
+                                        <div class="row">
                                              <div class="col-md-6">
-                                                <div class="position-relative form-group"><label for="name" class="">Họ và tên</label><input name="txtHoTen" id="name" type="name" class="form-control"></div>
+                                                <div class="position-relative form-group">
+                                                    <label for="name" class="">Họ và tên</label>
+                                                    <input name="txtHoTen" id="name" type="name" class="form-control" value="<?=$nguoi_dung->ho_ten;?>">
+                                                </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="position-relative form-group"><label for="email" class="">Email</label><input name="txtEmail" id="email"  type="email" 
-                                                                                                                                                         class="form-control"></div>
+                                                <div class="position-relative form-group">
+                                                    <label for="email" class="">Email</label>
+                                                    <input name="txtEmail" id="email"  type="email"ss="form-control" value="<?=$nguoi_dung->email;?>">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="position-relative form-group"><label for="Address" class="">Địa chỉ</label><input name="txtDiaChi" id="Address"  type="text" class="form-control"></div>
-                                        <div class="position-relative form-group"><label for="Phone" class="">Số điện thoại</label><input name="txtSDT" id="Phone" " type="text" class="form-control">
+                                        <div class="position-relative form-group">
+                                            <label for="Address" class="">Địa chỉ</label>
+                                            <input name="txtDiaChi" id="Address"  type="text" class="form-control" value="<?=$nguoi_dung->dia_chi;?>">
                                         </div>
-                                         <div class="position-relative form-group"><label for="Position" class="">Vị trí công việc</label><input name="txtViTri" id="Position" " type="text" class="form-control">
+                                        <div class="position-relative form-group">
+                                            <label for="Phone" class="">Số điện thoại</label>
+                                            <input name="txtSDT" id="Phone" type="text" class="form-control" value="<?=$nguoi_dung->sdt;?>">
+                                        </div>
+                                         <div class="position-relative form-group">
+                                            <label for="Position" class="">Vị trí công việc</label>
+                                            <select name="txtViTri" id="Position"  type="text" class="form-control">
+                                                    <?php foreach ($viTri as $key => $value) {
+                                                        echo "<option value=".$value->vi_tri_id.">".$value->ten_vi_tri ."</option>";
+                                                    }?>
+                                                </select>
                                         </div>
                                         
-                                        <div class="position-relative form-group"><label for="Sex" class="">Giới tính</label><input name="txtGioiTinh" id="Sex" " type="text" class="form-control">
+                                        <div class="position-relative form-group">
+                                            <label for="Sex" class="">Giới tính</label>                                        
+                                            <select name="txtGioiTinh" id="Sex" type="text" class="form-control">
+                                                   <option value="1">Nam</option>
+                                                   <option value="2">Nữ</option>
+                                                </select>
                                         </div>
                                     
                                         <div class="position-relative row form-check">
                                             <div class="" style="text-align: right; margin-right: 15px;">
                                                 <a href="<?=base_url();?>admin/Quan_tri_nguoi_dung" class="btn btn-danger">Quay trở lại</a>    
                                                 <button class="btn btn-danger" onclick="alert('Sửa thành công!')">Cập nhật</button>
-                                                <input name="txtID" type="hidden" value="<?=$tin_tuc->id;?>">
+                                                <input name="txtID" type="hidden" value="<?=$nguoi_dung->id;?>">
                                             </div>
                                         </div>
                                     </form>

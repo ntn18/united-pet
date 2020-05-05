@@ -35,8 +35,28 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		// Lấy ra danh sách tin tức
 		$data['danh_sach'] = $this->m_tinh_nguyen_vien->lay_danh_sach_tinh_nguyen_vien();
 
+		// Phân trang - đó bác sửa đi
+        $config['total_rows'] = $this->m_tinh_nguyen_vien->countAll();
+        $config['base_url'] = base_url() . "admin/Quan_tri_tinh_nguyen_vien/index";
+        $config['per_page'] = 3;
+        // Lấy danh sách
+        $start = $this->uri->segment(4);
+        $data['danh_sach'] = $this->m_tinh_nguyen_vien->getListHasPaginate($config['per_page'], $start);
 
-		// Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
+        //get vi_tri
+        $data['viTri'] = $this->m_tinh_nguyen_vien->getViTri();
+
+        $this->pagination->initialize($config);
+        $paginator = $this->pagination->create_links();
+        $data['paginator'] = $paginator;
+
+        // Hiển thị dữ liệu ra view từ từ bác êi
+        $this->load->view('admin/v_header', $data);
+        $this->load->view('admin/v_menu');
+        $this->load->view('admin/v_quan_tri_tinh_nguyen_vien', $data);
+
+
+		/* Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
         $this->db->from('tbl_dki_tnv');
         $offset=$this->uri->segment(2);    
         $limit= 2;        
@@ -59,9 +79,12 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		// Hiển thị dữ liệu ra view
 		$this->load->view('admin/v_header', $data);
 		$this->load->view('admin/v_menu');
-		$this->load->view('admin/v_quan_tri_tinh_nguyen_vien', $data);
+		$this->load->view('admin/v_quan_tri_tinh_nguyen_vien', $data);*/
 		
-	}
+	
+
+}
+
 
 	// Hiển thị trang chi tiết tin tức
 	public function xem()
@@ -75,6 +98,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Thông tin chi tiết về tình nguyện viên | United Pets";
+		
 
 		// Load ra được giao diện quản trị hệ thống
 		$this->load->view('admin/v_header', $data);
@@ -154,5 +178,6 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		// Cho các bạn quay về trang Quản trị tin tức
 		redirect(base_url()."admin/Quan_tri_tinh_nguyen_vien");
 	}
+	
 
 }

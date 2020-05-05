@@ -31,7 +31,7 @@ class Quan_tri_cau_chuyen extends CI_Controller {
         $data['email'] = $this->session->userdata('email');
         // Khai báo tiêu đề của trang
         $data['title'] = "Quản trị câu chuyện | United Pets";
-        // Phân trang
+        // Phân trang ne
         $config['total_rows'] = $this->m_cau_chuyen->countAll();
         $config['base_url'] = base_url() . "admin/Quan_tri_cau_chuyen/index";
         $config['per_page'] = 3;

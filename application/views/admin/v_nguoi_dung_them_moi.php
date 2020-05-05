@@ -82,12 +82,23 @@
                                             </div>
                                         </div>
                                         <div class="position-relative form-group"><label for="Address" class="">Địa chỉ</label><input name="txtDiaChi" id="Address"  type="text" class="form-control"></div>
-                                        <div class="position-relative form-group"><label for="Phone" class="">Số điện thoại</label><input name="txtSDT" id="Phone" " type="text" class="form-control">
+                                        <div class="position-relative form-group"><label for="Phone" class="">Số điện thoại</label><input name="txtSDT" id="Phone" type="text" class="form-control">
                                         </div>
-                                         <div class="position-relative form-group"><label for="Position" class="">Vị trí công việc</label><input name="txtViTri" id="Position" " type="text" class="form-control">
+                                         <div class="position-relative form-group">
+                                            <label for="Position" class="">Vị trí công việc</label>
+                                            <select name="txtViTri" id="Position"  type="text" class="form-control">
+                                                    <?php foreach ($viTri as $key => $value) {
+                                                        echo "<option value=".$value->vi_tri_id.">".$value->ten_vi_tri ."</option>";
+                                                    }?>
+                                                </select>
                                         </div>
                                         
-                                        <div class="position-relative form-group"><label for="Sex" class="">Giới tính</label><input name="txtGioiTinh" id="Sex" " type="text" class="form-control">
+                                        <div class="position-relative form-group">
+                                            <label for="Sex" class="">Giới tính</label>
+                                            <select name="txtGioiTinh" id="Sex" type="text" class="form-control">
+                                                   <option value="1">Nam</option>
+                                                   <option value="2">Nữ</option>
+                                                </select>
                                         </div>
                                     
                                         <div class="position-relative row form-check">
