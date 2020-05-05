@@ -1038,9 +1038,6 @@
                                 </a>
                             </li>
                             <li>
-<<<<<<< HEAD
-                                <a href="<?=base_url();?>admin/Quan_tri_nguoi_dung">
-=======
                                 <a href="<?=base_url();?>admin/Quan_tri_cau_chuyen">
                                     <i class="metismenu-icon pe-7s-browser"></i>
                                     Quản trị câu chuyện
@@ -1049,7 +1046,6 @@
                             </li>
                             <li>
                                 <a href="<?=base_url();?>admin/Quan_tri_san_pham">
->>>>>>> 17f0bd889da1318bc71014293fc5437526348a87
                                     <i class="metismenu-icon pe-7s-plugin"></i>
                                     Quản trị người dùng
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>

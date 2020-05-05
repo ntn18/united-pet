@@ -119,7 +119,19 @@
 			// Thực hiện việc xóa dữ liệu
 			$this->db->where('id', $id);
 			$this->db->delete('tbl_news');
-        }
+		}
+		
+		
+		public function getListHasPaginate($total, $start)
+		{
+			$this->db->limit($total, $start);
+			$query = $this->db->get('tbl_news');
+			return $query->result();
+		}
+
+		public function countAll() {
+		return $this->db->count_all('tbl_news');
+		}
 
 	}
 ;?>
