@@ -1030,27 +1030,39 @@
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
+
                             <li>
-                                <a href="<?=base_url();?>admin/Quan_tri_tin_tuc">
-                                    <i class="metismenu-icon pe-7s-browser"></i>
-                                    Quản trị tin tức
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?=base_url();?>admin/Quan_tri_cau_chuyen">
-                                    <i class="metismenu-icon pe-7s-browser"></i>
-                                    Quản trị câu chuyện
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?=base_url();?>admin/Quan_tri_san_pham">
+                                <a href="<?=base_url();?>admin/Quan_tri_nguoi_dung">
                                     <i class="metismenu-icon pe-7s-plugin"></i>
                                     Quản trị người dùng
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_thu_cung">
+                                    <i class="metismenu-icon pe-7s-plugin"></i>
+                                    Quản trị động vật
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_tin_tuc">
+                                    <i class="metismenu-icon pe-7s-plugin"></i>
+                                    Quản trị tin tức
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_cau_chuyen">
+                                    <i class="metismenu-icon pe-7s-plugin"></i>
+                                    Quản trị câu chuyện
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
+                            
                             <li>
                                 <a href="<?=base_url();?>admin/Quan_tri_phan_hoi">
                                     <i class="metismenu-icon pe-7s-plugin"></i>
@@ -1058,6 +1070,7 @@
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
+
                              <li>
                                 <a href="<?=base_url();?>admin/Quan_tri_tinh_nguyen_vien">
                                     <i class="metismenu-icon pe-7s-plugin"></i>
