@@ -103,7 +103,7 @@
 			} else {
 				$data = array(
 					'tieu_de' => $tieu_de,
-					'anh_minh_hoa' => $data["image"],
+					'anh' => $data["image"],
 					'mo_ta' => $mo_ta,
 					'noi_dung' => $noi_dung
 				);
