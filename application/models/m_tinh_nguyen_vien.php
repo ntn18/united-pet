@@ -5,7 +5,9 @@
 		public function lay_danh_sach_tinh_nguyen_vien()
 		{
 			$query= $this->db->query("
-				SELECT * FROM tbl_dki_tnv ORDER BY id DESC
+				SELECT  tbl_dki_tnv.id, tbl_dki_tnv.ho_ten, tbl_dki_tnv.gioi_tinh_id, tbl_vi_tri.ten_vi_tri, tbl_dki_tnv.dob
+				FROM tbl_dki_tnv 
+				INNER JOIN tbl_vi_tri ON tbl_dki_tnv.vi_tri_id = tbl_vi_tri.vi_tri_id ORDER BY id DESC
 			");
 
 			return $query->result();
@@ -28,27 +30,20 @@
 		public function them_moi_tinh_nguyen_vien()
         {
 			// Dữ liệu thu được từ FORM nhập dữ liệu
-			$id = $_POST['txtID'];
-			$ho_ten = $_POST['txtHoten'];
-			$sdt = $_POST['txtsdt'];
-			$email = $_POST['txtemail'];
-			$dia_chi = $_POST['txtdiachi'];
-			$dob = $_POST['txtdob'];
-			$mo_ta = $_POST['txtMoTa'];
 			
+			$ho_ten = $_POST['txthoten'];
+			$gioi_tinh = $_POST['txtgioitinh'];
+			$ngay_sinh = $_POST['txtngaysinh'];
+			$chuc_vu = $_POST['txtchucvu'];
 			
 		   
 			// Đẩy dữ liệu này vào CSDL
 			$data = array(
-				'id'=>$id,
-
 				'ho_ten' => $ho_ten,
-				'sdt' => $sdt,
-				'email' => $email,
-				'dia_chi' => $dia_chi,
-				'dob' => $dob,
+				'gioi_tinh_id'=>$gioi_tinh,
+				'dob' => $ngay_sinh,
+				'vi_tri_id'=>$chuc_vu,
 
-				'email' => $this->session->userdata('email')
 			);
 
 			// Thực hiện chèn dữ liệu vào bảng TÌNH NGUYỆN VIÊN
@@ -59,30 +54,26 @@
         {
         	// Dữ liệu thu được từ FORM nhập dữ liệu
 			$id = $_POST['txtID'];
-			$ho_ten = $_POST['txtHoten'];
-			$sdt = $_POST['txtsdt'];
-			$email = $_POST['txtemail'];
-			$dia_chi = $_POST['txtdiachi'];
-			$dob = $_POST['txtdob'];
-			$mo_ta = $_POST['txtMoTa'];
-
+	        $ho_ten = $_POST['txthoten'];
+			$gioi_tinh = $_POST['txtgioitinh'];
+			$ngay_sinh = $_POST['txtngaysinh'];
+			$chuc_vu = $_POST['txtchucvu'];
+			
 		
 			
 
 			// Đẩy dữ liệu này vào CSDL
 
 		    
-				$data = array(
-				// 'id'=>$id,
+			$data = array(
 				'ho_ten' => $ho_ten,
-				'sdt' => $sdt,
-				'email' => $email,
-				'dia_chi' => $dia_chi,
-				'dob' => $dob,
+				'gioi_tinh_id'=>$gioi_tinh,
+				'dob' => $ngay_sinh,
+				'vi_tri_id'=>$chuc_vu,
 
-				'email' => $this->session->userdata('email')
-				);
+			);
 			
+
 
 			// Thực hiện cập nhật dữ liệu vào bảng tình nguyện viên
 
@@ -95,6 +86,14 @@
 			// Thực hiện việc xóa dữ liệu
 			$this->db->where('id', $id);
 			$this->db->delete('tbl_dki_tnv');
+        }
+
+        public function getViTri(){
+        	$query= $this->db->query("
+				SELECT * FROM tbl_vi_tri
+			");
+
+			return $query->result();
         }
 
 	}

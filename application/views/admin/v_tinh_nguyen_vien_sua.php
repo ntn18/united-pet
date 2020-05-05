@@ -1,100 +1,59 @@
-<div class="app-main__outer">
+            <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
-                            <h2>Quản trị tình nguyện viên</h2>
-                            <div class="page-title-actions">
-                                <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/them_moi_tinh_nguyen_vien">
-                                <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                    <span class="ladda-label">Thêm mới</span>
-                                    <span class="ladda-spinner"></span>
-                                    <div class="ladda-progress" style="width: 0px;"></div>
-                                </button>
-                                </a>
-                            </div>    
-                        </div>
-                    </div>
-                    <h4 class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-                        <div></div>
-                        <div class="col-12 col-md-3 p-0 mb-3">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                        </div>
-                    </h4>
-                    <div class="card mb-3">
-                        <div class="card-header pr-0 pl-0">
-                            <div class="row no-gutters align-items-center col-12">
-                                <div class="col-3 font-weight-bold pl-3">Họ Tên</div>
-                                <div class="d-none d-md-block col-9 text-muted">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Giới tính</div>
-                                        <div class="col-3">Chức vụ</div>
-                                        <div class="col-3">Ngày sinh</div>
-                                        <div class="col-3">Thao tác</div>
-                                      
+                            <div class="main-card mb-12 card" style="width:100%">
+                                <div class="card-body"><h5 class="card-title" style="font-size:20px;">Sưa tình thông tin tình nguyên viên</h5>
+                                    <div>
+                                    <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_tinh_nguyen_vien/thuc_hien_sua_thong_tin_tinh_nguyen_vien';?>">
+
+                                        <div class="position-relative row form-group col-sm-12">
+                                            <label for="exampleEmail" class="col-sm-2 col-form-label">Họ Tên</label>
+                                            <div class="col-sm-10">
+                                                <input name="txthoten" type="text" class="form-control">
+                                            </div>
+                                       
+                                        <div class="position-relative row form-group col-sm-12">
+                                            <label for="exampleEmail" class="col-sm-2 col-form-label">Giới tính</label>
+                                            <div class="col-sm-10">
+                                                <select name="txtgioitinh" type="text" class="form-control">
+                                                   <option value="1">Nam</option>
+                                                   <option value="2">Nữ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group col-sm-12">
+                                            <label for="exampleEmail" class="col-sm-2 col-form-label">Ngày sinh</label>
+                                            <div class="col-sm-10">
+                                                <input name="txtngaysinh" type="date" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group col-sm-12">
+                                            <label for="exampleEmail" class="col-sm-2 col-form-label">Chức vụ</label>
+                                            <div class="col-sm-10">
+                                                 <select name="txtchucvu" type="text" class="form-control">
+                                                    <?php foreach ($viTri as $key => $value) {
+                                                        echo "<option value=".$value->vi_tri_id.">".$value->ten_vi_tri ."</option>";
+                                                    }?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-check">
+                                            <div class="" style="text-align: right; margin-right: 15px;">
+                                                <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien" class="btn btn-danger">Quay trở lại</a>    
+                                                <button type="submit" class="btn btn-danger" onclick="alert('Sửa thành công thành công!')">Xác nhận</button>
+                                                <input name="txtID" type="hidden" value="<?=$tinh_nguyen_vien->id;?>">
+                                            </div>
+                                        </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($danh_sach as $key => $row) {;?>
-                        <div class="card-body py-3">        
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-3">
-                                    <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->ho_ten;?></a>
-                                </div>
-                                <div class="d-none d-md-block col-7">        
-                                    <div class="row no-gutters align-items-center col-12">
-                                            <div class="media-body flex-truncate ml-3">
-                                                <?php if($row->gioi_tinh_id== 1 ) echo"Nam";
-                                                    else echo "Nữ";
-                                                ?>
-                                            </div>
-                                        <div class="col-2">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->ten_vi_tri;?></a>
-                                            
-                                        </div>
-                                        <div class="media col-3 align-items-center">
-                                            <div class="media-body flex-truncate ml-3">
-                                                <?=$row->dob;?>
-                                            </div>
-<!--                                         </div>  
-                                            <div class="media col-6 align-items-center">
-                                            <div class="media-body flex-truncate ml-2">
-                                                <?=$row->Thao_tac;?>
-                                            </div>
-                                        </div> -->                                       
-                                        <div class="col-3 row">
-                                            <div class="col-6">
-                                            <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/sua/<?=$row->id;?>">
-                                                <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                    <span class="ladda-label">Sửa</span>
-                                                    <span class="ladda-spinner"></span>
-                                                    <div class="ladda-progress" style="width: 0px;"></div>
-                                                </button>
-                                            </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/xoa/<?=$row->id;?>">
-                                                    <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                        <span class="ladda-label">Xóa</span>
-                                                        <span class="ladda-spinner"></span>
-                                                        <div class="ladda-progress" style="width: 0px;"></div>
-                                                    </button>
-                                                </a>
-                                            </div>
-                                            
-                                        </div>    
-                                    </div>        
-                                </div>
-                            </div>        
-                        </div>
-                        <?php   
-                        }
-                        ;?>
-
-                        <div class="paging"><?php echo $paginator; ?></div>  
                     </div>
                 </div>
-    
                 </div>
     </div>
 </div>
@@ -340,7 +299,7 @@
                                             <label class="custom-control-label" for="exampleCustomCheckbox2444">&nbsp;</label></div>
                                     </div>
                                     <div class="widget-content-left mr-3">
-                                        <div class="widget-content-left"><img width="42" class="rounded" src="<?=base_url();?>assets/images/avatars/1.jpg" alt=""/></div>
+                                        <div class="widget-content-left"><img width="42" class="rounded" src="assets/images/avatars/1.jpg" alt=""/></div>
                                     </div>
                                     <div class="widget-content-left">
                                         <div class="widget-heading">Go grocery shopping</div>
@@ -419,42 +378,42 @@
                                         <div class="avatar-wrapper mt-2 avatar-wrapper-overlap">
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/1.jpg"
+                                                        src="assets/images/avatars/1.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/2.jpg"
+                                                        src="assets/images/avatars/2.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/3.jpg"
+                                                        src="assets/images/avatars/3.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/4.jpg"
+                                                        src="assets/images/avatars/4.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/5.jpg"
+                                                        src="assets/images/avatars/5.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/6.jpg"
+                                                        src="assets/images/avatars/6.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/7.jpg"
+                                                        src="assets/images/avatars/7.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/8.jpg"
+                                                        src="assets/images/avatars/8.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
@@ -481,5 +440,5 @@
         </div>
     </div>
 </div>
-<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?=base_url();?>/assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
+<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?=base_url();?>assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
 </html>

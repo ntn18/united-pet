@@ -35,6 +35,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		// Lấy ra danh sách tin tức
 		$data['danh_sach'] = $this->m_tinh_nguyen_vien->lay_danh_sach_tinh_nguyen_vien();
 
+
 		// Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
         $this->db->from('tbl_dki_tnv');
         $offset=$this->uri->segment(2);    
@@ -43,7 +44,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
         $query_poster = $this->db->get();   
 			// pagination        
         $config['base_url'] = site_url() . '/phantrang/';
-        $config['total_rows'] = $this->db->count_all('tbl_story');
+        $config['total_rows'] = $this->db->count_all('tbl_dki_tnv');
         $config['uri_segment']  = 2;
         $config['per_page'] = $limit;
         $config['prev_link']  = '&lt;';
@@ -69,7 +70,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Lấy thông tin về tin tức thông qua qua MODEL
-		$data['cau_chuyen'] = $this->m_tinh_nguyen_vien->lay_tinh_nguyen_vien_theo_ID($id);
+		$data['tinh_nguyen_vien'] = $this->m_tinh_nguyen_vien->lay_tinh_nguyen_vien_theo_ID($id);
 
 		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
@@ -82,11 +83,14 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 	}
 
 	// Hàm này có tác dụng LOAD ra form nhập liệu
-	public function them_moi_cau_chuyen()
+	public function them_moi_tinh_nguyen_vien()
 	{
 		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
-		$data['title'] = "Đăng kí ting nguyện viên | United Pets";
+		$data['title'] = "Đăng kí tình nguyện viên | United Pets";
+
+		//get Vi tri
+		$data['viTri'] = $this->m_tinh_nguyen_vien->getViTri();
 
 		// Load ra được giao diện quản trị hệ thống
 		$this->load->view('admin/v_header', $data);
@@ -99,7 +103,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 	public function thuc_hien_them_moi_tinh_nguyen_vien()
 	{
 		// Thêm mới tin tức thông qua qua MODEL
-		$this->m_cau_chuyen->them_moi_tinh_nguyen_vien();
+		$this->m_tinh_nguyen_vien->them_moi_tinh_nguyen_vien();
 	
 		// Cho các bạn quay về trang Quản trị tin tức
 		redirect(base_url()."admin/Quan_tri_tinh_nguyen_vien");
@@ -112,11 +116,14 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Lấy thông tin về tin tức thông qua qua MODEL
-		$data['cau_chuyen'] = $this->m_tinh_nguyen_vien->lay_tinh_nguyen_vien_theo_ID($id);
+		$data['tinh_nguyen_vien'] = $this->m_tinh_nguyen_vien->lay_tinh_nguyen_vien_theo_ID($id);
 
 		$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Sửa thông tin tình nguyện viên | United Pets";
+
+		//get Vi tri
+		$data['viTri'] = $this->m_tinh_nguyen_vien->getViTri();
 
 		// Load ra được giao diện quản trị hệ thống
 		$this->load->view('admin/v_header', $data);
@@ -129,7 +136,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 	public function thuc_hien_sua_thong_tin_tinh_nguyen_vien()
 	{
 		// Sửa tin tức thông qua MODEL
-		$this->m_cau_chuyen->sua_cau_chuyen();
+		$this->m_tinh_nguyen_vien->sua_tinh_nguyen_vien();
 	
 		// Cho các bạn quay về trang Quản trị tin tức
 		redirect(base_url()."admin/Quan_tri_tinh_nguyen_vien");
@@ -142,7 +149,7 @@ class Quan_tri_tinh_nguyen_vien extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Xóa tin tức thông qua MODEL
-		$this->m_cau_chuyen->xoa_tinh_nguyen_vien($id);
+		$this->m_tinh_nguyen_vien->xoa_tinh_nguyen_vien($id);
 	
 		// Cho các bạn quay về trang Quản trị tin tức
 		redirect(base_url()."admin/Quan_tri_tinh_nguyen_vien");
