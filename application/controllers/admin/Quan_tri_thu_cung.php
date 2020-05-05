@@ -35,8 +35,25 @@ class Quan_tri_thu_cung extends CI_Controller {
 		// Lấy ra danh sách tin tức
 		$data['danh_sach'] = $this->m_thu_cung->lay_danh_sach_thu_cung();
 
-		// Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
-        $this->db->from('tbl_pet');
+		// Phân trang
+        $config['total_rows'] = $this->m_thu_cung->countAll();
+        $config['base_url'] = base_url() . "admin/Quan_tri_thu_cung/index";
+        $config['per_page'] = 3;
+        // Lấy danh sách
+        $start = $this->uri->segment(4);
+        $data['danh_sach'] = $this->m_thu_cung->getListHasPaginate($config['per_page'], $start);
+
+        $this->pagination->initialize($config);
+        $paginator = $this->pagination->create_links();
+        $data['paginator'] = $paginator;
+
+        // Hiển thị dữ liệu ra view
+        $this->load->view('admin/v_header', $data);
+        $this->load->view('admin/v_menu');
+        $this->load->view('admin/v_quan_tri_thu_cung', $data);
+
+        // Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
+        /*$this->db->from('tbl_pet');
         $offset=$this->uri->segment(2);    
         $limit= 2;        
         $this->db->limit($limit, $offset);
@@ -58,7 +75,7 @@ class Quan_tri_thu_cung extends CI_Controller {
 		// Hiển thị dữ liệu ra view
 		$this->load->view('admin/v_header', $data);
 		$this->load->view('admin/v_menu');
-		$this->load->view('admin/v_quan_tri_thu_cung', $data);
+		$this->load->view('admin/v_quan_tri_thu_cung', $data);*/
 		
 	}
 

@@ -135,5 +135,16 @@
       		return $query->result();
         }*/
 
+        public function getListHasPaginate($total, $start)
+    	{
+        	$this->db->limit($total, $start);
+        	$query = $this->db->get('tbl_pet');
+        	return $query->result();
+    	}
+
+    	public function countAll() {
+      		return $this->db->count_all('tbl_pet');
+    		}
+
 	}
 ;?>
