@@ -4,11 +4,11 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 
-                                <div>Sửa người dùng
+                                <div>SỬA THÔNG TIN NGƯỜI DÙNG
                                     
                                 </div>
                             </div>
-                            <div class="page-title-actions">
+                            <!-- <div class="page-title-actions">
                                 <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                                     <i class="fa fa-star"></i>
                                 </button>
@@ -57,7 +57,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>    </div>
                     </div>            <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
                         
@@ -66,30 +66,36 @@
                         <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Thông tin người dùng</h5>
-                                    <form class="">
+                                    <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_nguoi_dung/thuc_hien_sua_nguoi_dung';?>">
                                         <div class="form-row">
 
 
 
 
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group"><label for="name" class="">Họ và tên</label><input name="name" id="name" type="name" class="form-control"></div>
+                                             <div class="col-md-6">
+                                                <div class="position-relative form-group"><label for="name" class="">Họ và tên</label><input name="txtHoTen" id="name" type="name" class="form-control"></div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="position-relative form-group"><label for="email" class="">Email</label><input name="email" id="email"  type="email" 
+                                                <div class="position-relative form-group"><label for="email" class="">Email</label><input name="txtEmail" id="email"  type="email" 
                                                                                                                                                          class="form-control"></div>
                                             </div>
                                         </div>
-                                        <div class="position-relative form-group"><label for="Address" class="">Địa chỉ</label><input name="address" id="Address"  type="text" class="form-control"></div>
-                                        <div class="position-relative form-group"><label for="Phone" class="">Số điện thoại</label><input name="Phone" id="Phone" " type="text" class="form-control">
+                                        <div class="position-relative form-group"><label for="Address" class="">Địa chỉ</label><input name="txtDiaChi" id="Address"  type="text" class="form-control"></div>
+                                        <div class="position-relative form-group"><label for="Phone" class="">Số điện thoại</label><input name="txtSDT" id="Phone" " type="text" class="form-control">
                                         </div>
-                                         <div class="position-relative form-group"><label for="Position" class="">Vị trí công việc</label><input name="Position" id="Position" " type="text" class="form-control">
+                                         <div class="position-relative form-group"><label for="Position" class="">Vị trí công việc</label><input name="txtViTri" id="Position" " type="text" class="form-control">
                                         </div>
                                         
-                                        <div class="position-relative form-group"><label for="Sex" class="">Giới tính</label><input name="Sex" id="Sex" " type="text" class="form-control">
+                                        <div class="position-relative form-group"><label for="Sex" class="">Giới tính</label><input name="txtGioiTinh" id="Sex" " type="text" class="form-control">
                                         </div>
                                     
-                                        <button class="mt-2 btn btn-primary">Cập nhật</button>
+                                        <div class="position-relative row form-check">
+                                            <div class="" style="text-align: right; margin-right: 15px;">
+                                                <a href="<?=base_url();?>admin/Quan_tri_nguoi_dung" class="btn btn-danger">Quay trở lại</a>    
+                                                <button class="btn btn-danger" onclick="alert('Sửa thành công!')">Cập nhật</button>
+                                                <input name="txtID" type="hidden" value="<?=$tin_tuc->id;?>">
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

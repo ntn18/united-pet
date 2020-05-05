@@ -8,12 +8,12 @@
                                     <i class="pe-7s-medal icon-gradient bg-tempting-azure">
                                     </i>
                                 </div>
-                                <div>Quản trị người dùng
+                                <div>QUẢN TRỊ NGƯỜI DÙNG
                                 </div>
                             </div>
                             <div class="page-title-actions">
                                
-                               <a href="<?=base_url();?>admin/quan_tri_tin_tuc/them_moi_tin_tuc">
+                               <a href="<?=base_url();?>admin/quan_tri_nguoi_dung/them_moi_nguoi_dung">
                                 <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                     <span class="ladda-label">Thêm mới</span>
                                     <span class="ladda-spinner"></span>
@@ -37,23 +37,23 @@
                                     <th>Thao tác</th>
                                 </tr>
                                 </thead>
-                                 <?php foreach ($danh_sach as $row) {;?>                            <tbody>
+                                 <?php foreach ($danh_sach as $key => $row) {;?>                            <tbody>
                                 <tr>
                                     <td><?=$row->ho_ten;?></td>
-                                    <td><?=$row->ten_gioi_tinh;?></td>
+                                    <td><?=$row->gioi_tinh_id;?></td>
                                     <td><?=$row->dia_chi;?></td>
                                     <td><?=$row->sdt;?></td>
                                     <td><?=$row->email;?></td>
                                     <td><?=$row->vi_tri_id;?></td>
                                     <td>
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/sua/<?=$row->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_nguoi_dung/sua/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Sửa</span>
                                                 <span class="ladda-spinner"></span>
                                                 <div class="ladda-progress" style="width: 0px;"></div>
                                             </button>
                                             </a>
-                                            <a href="<?=base_url();?>admin/quan_tri_tin_tuc/xoa/<?=$row->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_nguoi_dung/xoa/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Xóa</span>
                                                 <span class="ladda-spinner"></span>

@@ -12,13 +12,13 @@
                                             </div>
                                             <div style="display: inline-block; margin-left: 100px;">
                                                 <span style="font-weight:500;">Thời gian:</span>
-                                                <span><?=$cau_chuyen->ngay_dang;?></span>
+                                                <span><?=$cau_chuyen->ngay;?></span>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group">
                                             <div class="col-sm-12" style="text-align: center;">
-                                                <img src="<?=base_url()."assets/images/news/".$cau_chuyen->anh_minh_hoa;?>" style="width: auto; height: auto; margin-top: 30px;";?>
+                                                <img src="<?=base_url()."assets/images/news/".$cau_chuyen->anh;?>" style="width: auto; height: auto; margin-top: 30px;";?>
                                             </div>
                                         </div>
 

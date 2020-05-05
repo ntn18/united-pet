@@ -17,6 +17,7 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 
 		// Kết nối đến MODEL
 		$this->load->model('m_nguoi_dung');
+		$this->load->model('m_gioi_tinh');
 
 		// // Load thư viện session
 		// $this->load->library('session');
@@ -33,7 +34,7 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		$data['title'] = "Quản trị người dùng | United Pets";
 
 		// Lấy ra danh sách tin tức
-		$data['danh_sach'] = $this->m_nguoi_dung->lay_danh_sach_nguoi_dung();
+		$data['danh_sach'] = $this->m_nguoi_dung->lay_danh_sach_nguoi_dung1();
 
 		// // Tạo phân trang - chưa hoàn chỉnh, đang nghiên cứu
   //       $this->db->from('tbl_news');
@@ -67,7 +68,7 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 	// Hàm này có tác dụng LOAD ra form nhập liệu
 	public function them_moi_nguoi_dung()
 	{
-		$data['email']=$this->session->userdata('email');
+		//$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Thêm mới người dùng | United Pets";
 
@@ -95,9 +96,9 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Lấy thông tin về tin tức thông qua qua MODEL
-		$data['nguoi_dung'] = $this->m_nguoi_dung->lay_thong_tin_theo_ID($id);
+		//$data['nguoi_dung'] = $this->m_nguoi_dung->lay_thong_tin_theo_ID($id);
 
-		$data['email']=$this->session->userdata('email');
+		//$data['email']=$this->session->userdata('email');
 		// Khai báo tiêu đề của trang
 		$data['title'] = "Sửa thông tin người dùng | United Pets";
 
@@ -125,7 +126,7 @@ class Quan_tri_nguoi_dung extends CI_Controller {
 		$id = $this->uri->segment(4);
 
 		// Xóa tin tức thông qua MODEL
-		$this->m_tin_tuc->xoa_nguoi_dung($id);
+		$this->m_nguoi_dung->xoa_nguoi_dung($id);
 	
 		// Cho các bạn quay về trang Quản trị tin tức
 		redirect(base_url()."admin/Quan_tri_nguoi_dung");
