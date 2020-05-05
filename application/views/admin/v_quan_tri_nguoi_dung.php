@@ -39,12 +39,31 @@
                                 </thead>
                                  <?php foreach ($danh_sach as $key => $row) {;?>                            <tbody>
                                 <tr>
-                                    <td><?=$row->ho_ten;?></td>
-                                    <td><?=$row->gioi_tinh_id;?></td>
+                                    <td>
+                                        <a href="<?=base_url();?>admin/quan_tri_nguoi_dung/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->ho_ten;?>
+                                        </a>
+                                    </td>
+                                    <td>
+                                       <?php
+                                            foreach ($gioiTinh as $key2 => $value2) {
+                                                if ($row->gioi_tinh_id == $value2->gioi_tinh_id) {
+                                                    echo $value2->ten_gioi_tinh;
+                                                }
+                                            }
+                                        ?>                                      
+                                    </td>
                                     <td><?=$row->dia_chi;?></td>
                                     <td><?=$row->sdt;?></td>
                                     <td><?=$row->email;?></td>
-                                    <td><?=$row->vi_tri_id;?></td>
+                                    <td>
+                                        <?php
+                                            foreach ($viTri as $key1 => $value) {
+                                                if ($row->vi_tri_id == $value->vi_tri_id) {
+                                                    echo $value->ten_vi_tri;
+                                                }
+                                            }
+                                        ?>  
+                                    </td>
                                     <td>
                                             <a href="<?=base_url();?>admin/quan_tri_nguoi_dung/sua/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">

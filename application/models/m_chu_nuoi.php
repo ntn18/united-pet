@@ -1,38 +1,40 @@
 <?php 
-	class m_thu_cung extends CI_Model {
+	class m_chu_nuoi extends CI_Model {
 		
 		// Lấy toàn bộ tin tức
-		public function lay_danh_sach_thu_cung()
+		public function lay_danh_sach_chu_nuoi()
 		{
 			$query= $this->db->query("
-				SELECT * FROM tbl_pet ORDER BY pet_id DESC
+				SELECT * FROM tbl_chu_nuoi ORDER BY id DESC
 			");
 
 			return $query->result();
 		}
 
         // Mục đích Lấy tin tức theo ID
-		public function lay_thu_cung_theo_ID($id)
+		public function lay_chu_nuoi_theo_ID($id)
         {
 			// Viết câu lệnh truy vấn SQL lấy các tin tức
 			$query = $this->db->query("
 				SELECT * 
-				FROM tbl_pet
-				WHERE pet_id=".$id
+				FROM tbl_chu_nuoi inner join tbl_pet on tbl_chu_nuoi.id = tbl_pet.chu_nuoi_id
+				WHERE id=".$id
 			);
 
 			// Trả kết quả truy vấn dữ liệu
 	        return  $query->row();
         }
 
-		public function them_moi_thu_cung()
+		public function them_moi_chu_nuoi()
         {
 			// Dữ liệu thu được từ FORM nhập dữ liệu
-			$ten_pet = $_POST['txtTenPet'];
-			$loai_pet = $_POST['txtLoaiPet'];
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
-			$mo_ta = $_POST['txtMoTa'];
-			$chu_nuoi_id = $_POST['txtChuNuoi'];
+			$ho_ten = $_POST['txtHoTen'];
+			$sdt = $_POST['txtSDT'];
+			$dia_chi = $_POST['txtDiaChi'];
+			$email = $_POST['txtEmail'];
+			$cmt = $_POST['txtCMT'];
+			$pet_id = $_POST['txtPetID'];
+			$ghi_chu = $_POST['txtGhiChu'];
 
 			// Xử lý đoạn UPLOAD ảnh minh họa
 			if (!empty($_FILES['txtAnh']['name'])) {
@@ -55,26 +57,31 @@
 
 			// Đẩy dữ liệu này vào CSDL
 			$data = array(
-				'ten_pet' => $ten_pet,
-				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
-				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi,
-				'anh' => $data["image"],
+				'ho_ten' => $ho_ten,
+				'sdt' => $sdt,
+				'dia_chi' => $dia_chi,
+				'email' => $email,
+				'cmt' => $cmt,
+				'pet_id' => $pet_id,
+				'ghi_chu' => $ghi_chu,
+				'anh' => $data["image"]
 			);
 
 			// Thực hiện chèn dữ liệu vào bảng TIN TỨC
-			$this->db->insert('tbl_pet', $data);
+			$this->db->insert('tbl_chu_nuoi', $data);
         }
 
-		public function sua_thu_cung()
+		public function sua_chu_nuoi()
         {
         	// Dữ liệu thu được từ FORM nhập dữ liệu
-			$ten_pet = $_POST['txtTenPet'];
-			$loai_pet = $_POST['txtLoaiPet'];
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
-			$mo_ta = $_POST['txtMoTa'];
-			$chu_nuoi_id = $_POST['txtChuNuoi'];
+			$id = $_POST['txtID'];
+			$ho_ten = $_POST['txtHoTen'];
+			$sdt = $_POST['txtSDT'];
+			$dia_chi = $_POST['txtDiaChi'];
+			$email = $_POST['txtEmail'];
+			$cmt = $_POST['txtCMT'];
+			$pet_id = $_POST['txtPetID'];
+			$ghi_chu = $_POST['txtGhiChu'];
 
 			// Xử lý đoạn UPLOAD ảnh minh họa
 			if (!empty($_FILES['txtAnh']['name'])) {
@@ -100,51 +107,50 @@
 		    if($data["image"] == '')
 		    {
 				$data = array(
-				'ten_pet' => $ten_pet,
-				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
-				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi
+					'ho_ten' => $ho_ten,
+					'sdt' => $sdt,
+					'dia_chi' => $dia_chi,
+					'email' => $email,
+					'cmt' => $cmt,
+					'pet_id' => $pet_id,
+					'ghi_chu' => $ghi_chu
 				);
 			} else {
 				$data = array(
-				'ten_pet' => $ten_pet,
-				'loai_pet_id' => $loai_pet,
-				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
-				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi,
-				'anh' => $data["image"],
+					'ho_ten' => $ho_ten,
+					'sdt' => $sdt,
+					'dia_chi' => $dia_chi,
+					'email' => $email,
+					'cmt' => $cmt,
+					'pet_id' => $pet_id,
+					'ghi_chu' => $ghi_chu,
+					'anh' => $data["image"],
 				);
 			}
 
 			// Thực hiện cập nhật dữ liệu vào bảng TIN TỨC
-			$this->db->where('pet_id', $id);
-			$this->db->update('tbl_pet', $data);
+			$this->db->where('id', $id);
+			$this->db->update('tbl_chu_nuoi', $data);
         }
 
-		public function xoa_thu_cung($id)
-		{
-			// Thực hiện việc xóa dữ liệu
-			$this->db->where('pet_id', $id);
-			$this->db->delete('tbl_pet');
-        }
-
-        /*public function lay_loai_pet()
+		public function xoa_chu_nuoi($id)
         {
-        	$query = $this->db->query("SELECT tbl_loai_pet.loai_pet FROM tbl_pet INNER JOIN tbl_loai_pet on tbl_pet.loai_pet_id = tbl_loai_pet.loai_pet_id");
-      		return $query->result();
-        }*/
+			// Thực hiện việc xóa dữ liệu
+			$this->db->where('id', $id);
+			$this->db->delete('tbl_chu_nuoi');
+		}
+		
+		
+		public function getListHasPaginate($total, $start)
+		{
+			$this->db->limit($total, $start);
+			$query = $this->db->get('tbl_chu_nuoi');
+			return $query->result();
+		}
 
-        public function getListHasPaginate($total, $start)
-    	{
-        	$this->db->limit($total, $start);
-        	$query = $this->db->get('tbl_pet');
-        	return $query->result();
-    	}
-
-    	public function countAll() {
-      		return $this->db->count_all('tbl_pet');
-    		}
+		public function countAll() {
+		return $this->db->count_all('tbl_chu_nuoi');
+		}
 
 	}
 ;?>

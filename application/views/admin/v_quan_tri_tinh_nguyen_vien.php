@@ -49,8 +49,14 @@
                                                 ?>
                                             </div>
                                         <div class="col-2">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->ten_vi_tri;?></a>
-                                            
+                                            <a href="javascript:void(0)" class="d-block text-truncate">
+                                                <?php
+                                                foreach ($viTri as $key1 => $value1) {
+                                                    if ($row->vi_tri_id == $value1->vi_tri_id)
+                                                        echo $value1->ten_vi_tri;
+                                                }
+                                                ?>
+                                            </a>
                                         </div>
                                         <div class="media col-3 align-items-center">
                                             <div class="media-body flex-truncate ml-3">
