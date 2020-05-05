@@ -15,7 +15,7 @@
                                         <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Ảnh minh họa</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="txtAnhMinhHoa" class="form-control">
-                                                <img src="<?=base_url()."assets/images/news/".$cau_chuyen->anh_minh_hoa;?>" style="width: 200px; height: auto; margin-top: 10px;";?>
+                                                <img src="<?=base_url()."assets/images/news/".$cau_chuyen->anh;?>" style="width: 200px; height: auto; margin-top: 10px;";?>
                                             </div>
                                         </div>
 
