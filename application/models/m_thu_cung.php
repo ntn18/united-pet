@@ -70,6 +70,7 @@
 		public function sua_thu_cung()
         {
         	// Dữ liệu thu được từ FORM nhập dữ liệu
+        	$pet_id = $_POST['txtID'];
 			$ten_pet = $_POST['txtTenPet'];
 			$loai_pet = $_POST['txtLoaiPet'];
 			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
@@ -104,7 +105,7 @@
 				'loai_pet_id' => $loai_pet,
 				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi
+				'chu_nuoi_id' => $chu_nuoi_id
 				);
 			} else {
 				$data = array(
@@ -112,13 +113,13 @@
 				'loai_pet_id' => $loai_pet,
 				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi_id' => $chu_nuoi,
+				'chu_nuoi_id' => $chu_nuoi_id,
 				'anh' => $data["image"],
 				);
 			}
 
 			// Thực hiện cập nhật dữ liệu vào bảng TIN TỨC
-			$this->db->where('pet_id', $id);
+			$this->db->where('pet_id', $pet_id);
 			$this->db->update('tbl_pet', $data);
         }
 

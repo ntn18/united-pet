@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 04, 2020 lúc 07:29 PM
+-- Thời gian đã tạo: Th5 05, 2020 lúc 10:52 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.3
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_case` (
   `case_id` int(11) NOT NULL,
   `ng_bao_tin` varchar(200) DEFAULT NULL,
-  `sdt` varchar(10) NOT NULL,
+  `sdt` varchar(10) DEFAULT NULL,
   `dia_diem_cuu` varchar(200) NOT NULL,
   `thoi_gian` timestamp NOT NULL DEFAULT current_timestamp(),
   `loai_pet_id` int(11) NOT NULL,
@@ -41,6 +41,14 @@ CREATE TABLE `tbl_case` (
   `ghi_chu` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_case`
+--
+
+INSERT INTO `tbl_case` (`case_id`, `ng_bao_tin`, `sdt`, `dia_diem_cuu`, `thoi_gian`, `loai_pet_id`, `tinh_trang`, `muc_do_id`, `tiep_nhan_id`, `ghi_chu`) VALUES
+(1, NULL, NULL, 'Hà Nội', '2020-05-05 20:41:13', 1, 'Bỏ rơi', 2, 2, NULL),
+(2, NULL, NULL, 'Hà Đông', '2020-05-05 20:41:13', 2, 'Cấp cứu', 2, 2, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -48,7 +56,7 @@ CREATE TABLE `tbl_case` (
 --
 
 CREATE TABLE `tbl_chu_nuoi` (
-  `id` int(11) NOT NULL,
+  `chu_nuoi_id` int(11) NOT NULL,
   `ho_ten` varchar(200) NOT NULL,
   `sdt` varchar(10) NOT NULL,
   `dia_chi` varchar(200) NOT NULL,
@@ -58,6 +66,14 @@ CREATE TABLE `tbl_chu_nuoi` (
   `pet_id` int(11) NOT NULL,
   `ghi_chu` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_chu_nuoi`
+--
+
+INSERT INTO `tbl_chu_nuoi` (`chu_nuoi_id`, `ho_ten`, `sdt`, `dia_chi`, `email`, `cmt`, `anh`, `pet_id`, `ghi_chu`) VALUES
+(1, 'Trần A', '0123456789', 'Hà Đông', 'Email@gmail.com', '123456', NULL, 1, NULL),
+(2, 'Nguyễn B', '0234656489', 'Thanh Xuân', 'Email1@gmail.com', '456789', NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -77,6 +93,14 @@ CREATE TABLE `tbl_dki_tnv` (
   `mo_ta` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_dki_tnv`
+--
+
+INSERT INTO `tbl_dki_tnv` (`id`, `ho_ten`, `sdt`, `email`, `dia_chi`, `gioi_tinh_id`, `dob`, `vi_tri_id`, `mo_ta`) VALUES
+(1, 'Phan C', '0312586455', 'Email2@gmail.com', 'Đống Đa', 1, '2000-05-12', 1, 'Đẹp trai, học giỏi'),
+(2, 'Vũ D', '0894655452', 'Email3@gmail.com', 'Hai Bà Trưng', 2, '1999-05-19', 2, 'Xinh gái, nhà giàu');
+
 -- --------------------------------------------------------
 
 --
@@ -94,9 +118,7 @@ CREATE TABLE `tbl_gioi_tinh` (
 
 INSERT INTO `tbl_gioi_tinh` (`gioi_tinh_id`, `ten_gioi_tinh`) VALUES
 (1, 'Nam'),
-(2, 'Nữ'),
-(3, 'Nam'),
-(4, 'Nữ');
+(2, 'Nữ');
 
 -- --------------------------------------------------------
 
@@ -115,9 +137,7 @@ CREATE TABLE `tbl_loai_pet` (
 
 INSERT INTO `tbl_loai_pet` (`loai_pet_id`, `loai_pet`) VALUES
 (1, 'Chó'),
-(2, 'Mèo'),
-(3, 'Chó'),
-(4, 'Mèo');
+(2, 'Mèo');
 
 -- --------------------------------------------------------
 
@@ -179,8 +199,17 @@ CREATE TABLE `tbl_pet` (
   `giong` varchar(100) DEFAULT NULL,
   `xu_ly_id` int(11) NOT NULL,
   `mo_ta` text NOT NULL,
-  `chu_nuoi_id` int(11) DEFAULT NULL
+  `chu_nuoi_id` int(11) DEFAULT NULL,
+  `anh` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_pet`
+--
+
+INSERT INTO `tbl_pet` (`pet_id`, `ten_pet`, `loai_pet_id`, `giong`, `xu_ly_id`, `mo_ta`, `chu_nuoi_id`, `anh`) VALUES
+(1, 'Mon', 2, 'Lai', 2, 'Mon xinh gái', 1, NULL),
+(2, 'Min', 1, 'Lai', 1, 'Min đập lọ', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -230,9 +259,7 @@ CREATE TABLE `tbl_tiep_nhan` (
 
 INSERT INTO `tbl_tiep_nhan` (`tiep_nhan_id`, `tiep_nhan`) VALUES
 (1, 'Đã tiếp nhận'),
-(2, 'Chưa tiếp nhận'),
-(3, 'Đã tiếp nhận'),
-(4, 'Chưa tiếp nhận');
+(2, 'Chưa tiếp nhận');
 
 -- --------------------------------------------------------
 
@@ -284,7 +311,7 @@ CREATE TABLE `tbl_vi_tri` (
 --
 
 CREATE TABLE `tbl_xu_ly` (
-  `id` int(11) NOT NULL,
+  `xu_ly_id` int(11) NOT NULL,
   `xu_ly` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -292,7 +319,7 @@ CREATE TABLE `tbl_xu_ly` (
 -- Đang đổ dữ liệu cho bảng `tbl_xu_ly`
 --
 
-INSERT INTO `tbl_xu_ly` (`id`, `xu_ly`) VALUES
+INSERT INTO `tbl_xu_ly` (`xu_ly_id`, `xu_ly`) VALUES
 (1, 'Đã được nhận nuôi'),
 (2, 'Chưa được nhận nuôi');
 
@@ -310,7 +337,7 @@ ALTER TABLE `tbl_case`
 -- Chỉ mục cho bảng `tbl_chu_nuoi`
 --
 ALTER TABLE `tbl_chu_nuoi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`chu_nuoi_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_dki_tnv`
@@ -341,6 +368,12 @@ ALTER TABLE `tbl_muc_do`
 --
 ALTER TABLE `tbl_news`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_pet`
+--
+ALTER TABLE `tbl_pet`
+  ADD PRIMARY KEY (`pet_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_phan_hoi`
@@ -376,7 +409,7 @@ ALTER TABLE `tbl_vi_tri`
 -- Chỉ mục cho bảng `tbl_xu_ly`
 --
 ALTER TABLE `tbl_xu_ly`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`xu_ly_id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -386,19 +419,19 @@ ALTER TABLE `tbl_xu_ly`
 -- AUTO_INCREMENT cho bảng `tbl_case`
 --
 ALTER TABLE `tbl_case`
-  MODIFY `case_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `case_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_chu_nuoi`
 --
 ALTER TABLE `tbl_chu_nuoi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `chu_nuoi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_dki_tnv`
 --
 ALTER TABLE `tbl_dki_tnv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_gioi_tinh`
@@ -423,6 +456,12 @@ ALTER TABLE `tbl_muc_do`
 --
 ALTER TABLE `tbl_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_pet`
+--
+ALTER TABLE `tbl_pet`
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_phan_hoi`
@@ -458,7 +497,7 @@ ALTER TABLE `tbl_vi_tri`
 -- AUTO_INCREMENT cho bảng `tbl_xu_ly`
 --
 ALTER TABLE `tbl_xu_ly`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `xu_ly_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
