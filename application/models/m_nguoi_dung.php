@@ -24,5 +24,13 @@
 
 			return $query->row();
 		}
+		public function lay_danh_sach_nguoi_dung()
+		{
+			$query = $this->db->query("select * from tbl_user inner join tbl_gioi_tinh on tbl_user.gioi_tinh_id=tbl_gioi_tinh.gioi_tinh_id
+				");
+
+			return $query->result();
+		}
+		
 	}
 ;?>

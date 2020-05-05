@@ -15,7 +15,7 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-<link href="./main.87c0748b313a1dda75f5.css" rel="stylesheet"></head>
+<link href="<?=base_url();?>main.87c0748b313a1dda75f5.css" rel="stylesheet"></head>
 
 <body>
 <div class="app-container app-theme-white body-tabs-shadow">
@@ -27,7 +27,7 @@
                             <div class="slick-slider">
                                 <div>
                                     <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-plum-plate" tabindex="-1">
-                                        <div class="slide-img-bg" style="background-image: url('assets/images/abouttab2.jpg');">
+                                        <div class="slide-img-bg" style="background-image: url('<?=base_url();?>assets/images/abouttab2.jpg');">
                                             
                                         </div>
                                         <div class="slider-content"><h3>United Pets</h3>
@@ -37,7 +37,7 @@
                             
                                 <div>
                                     <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-sunny-morning" tabindex="-1">
-                                        <div class="slide-img-bg" style="background-image: url('assets/images/abouttab3.jpg');">
+                                        <div class="slide-img-bg" style="background-image: url('<?=base_url();?>assets/images/abouttab3.jpg');">
                                             
                                         </div>
                                         <div class="slider-content"><h3>Sứ mệnh của chúng tôi</h3>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
                         <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                            <img src="./assets/images/logo-inverse.png" style="margin-bottom:50px" />
+                            <img src="<?=base_url();?>assets/images/logo-inverse.png" style="margin-bottom:50px" />
                             <h4 class="mb-0">
                                 <span>Vui lòng đăng nhập...</span></h4>
                             <div class="divider row"></div>
@@ -79,5 +79,5 @@
             </div>
         </div>
 </div>
-<script type="text/javascript" src="./assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
+<script type="text/javascript" src="<?=base_url();?>assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
 </html>
