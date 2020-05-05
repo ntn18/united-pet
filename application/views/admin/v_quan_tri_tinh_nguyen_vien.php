@@ -2,7 +2,7 @@
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
-                            <h2>Quản trị câu chuyện</h2>
+                            <h2>Quản trị tình nguyện viên</h2>
                             <div class="page-title-actions">
                                 <a href="<?=base_url();?>admin/quan_tri_cau_chuyen/them_moi_cau_chuyen">
                                 <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
@@ -23,11 +23,12 @@
                     <div class="card mb-3">
                         <div class="card-header pr-0 pl-0">
                             <div class="row no-gutters align-items-center w-100">
-                                <div class="col font-weight-bold pl-3">Danh sách câu chuyện</div>
+                                <div class="col font-weight-bold pl-3">Danh sách tình nguyên viên</div>
                                 <div class="d-none d-md-block col-6 text-muted">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Người đăng</div>
-                                        <div class="col-6">Ngày đăng</div>
+                                        <div class="col-3">Họ Tên</div>
+                                        <div class="col-6">Chức vụ</div>
+                                        <div class="col-3">Ngày sinh</div>
                                         <div class="col-3">Thao tác</div>
                                     </div>
                                 </div>
@@ -36,18 +37,23 @@
                         <?php foreach ($danh_sach as $key => $row) {;?>
                         <div class="card-body py-3">        
                             <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_cau_chuyen/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->tieu_de;?></a></div>
+                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$hoten;?></a></div>
                                 <div class="d-none d-md-block col-6">        
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->tac_gia;?></a>
+                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->chuc_vu;?></a>
                                             
                                         </div>
                                         <div class="media col-6 align-items-center">
                                             <div class="media-body flex-truncate ml-2">
-                                                <?=$row->ngay;?>
+                                                <?=$row->ngay_sinh;?>
                                             </div>
-                                        </div>                                        
+                                        </div>  
+                                            <div class="media col-6 align-items-center">
+                                            <div class="media-body flex-truncate ml-2">
+                                                <?=$row->Thao_tac;?>
+                                            </div>
+                                        </div>                                       
                                         <div class="col-3">
                                             <a href="<?=base_url();?>admin/quan_tri_cau_chuyen/sua/<?=$row->id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
