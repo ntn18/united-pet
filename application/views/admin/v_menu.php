@@ -1058,6 +1058,13 @@
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                             </li>
+                             <li>
+                                <a href="<?=base_url();?>admin/Quan_tri_tinh_nguyen_vien">
+                                    <i class="metismenu-icon pe-7s-plugin"></i>
+                                    Quản trị tình nguyên viên
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
