@@ -12,7 +12,7 @@
 		}
 
         // Mục đích Lấy tin tức theo ID
-		public function lay_tin_tuc_theo_ID($id)
+		public function lay_thu_cung_theo_ID($id)
         {
 			// Viết câu lệnh truy vấn SQL lấy các tin tức
 			$query = $this->db->query("
@@ -29,10 +29,10 @@
         {
 			// Dữ liệu thu được từ FORM nhập dữ liệu
 			$ten_pet = $_POST['txtTenPet'];
-			$loai_pet = $_POST['txtLoaiPet']
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID']
+			$loai_pet = $_POST['txtLoaiPet'];
+			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
 			$mo_ta = $_POST['txtMoTa'];
-			$chu_nuoi = $_POST['txtChuNuoi'];
+			$chu_nuoi_id = $_POST['txtChuNuoi'];
 
 			// Xử lý đoạn UPLOAD ảnh minh họa
 			if (!empty($_FILES['txtAnh']['name'])) {
@@ -59,7 +59,7 @@
 				'loai_pet_id' => $loai_pet,
 				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi' => $chu_nuoi
+				'chu_nuoi_id' => $chu_nuoi,
 				'anh' => $data["image"],
 			);
 
@@ -71,10 +71,10 @@
         {
         	// Dữ liệu thu được từ FORM nhập dữ liệu
 			$ten_pet = $_POST['txtTenPet'];
-			$loai_pet = $_POST['txtLoaiPet']
-			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID']
+			$loai_pet = $_POST['txtLoaiPet'];
+			$da_nhan_nuoi_id = $_POST['txtDaNhanNuoiID'];
 			$mo_ta = $_POST['txtMoTa'];
-			$chu_nuoi = $_POST['txtChuNuoi'];
+			$chu_nuoi_id = $_POST['txtChuNuoi'];
 
 			// Xử lý đoạn UPLOAD ảnh minh họa
 			if (!empty($_FILES['txtAnh']['name'])) {
@@ -104,7 +104,7 @@
 				'loai_pet_id' => $loai_pet,
 				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi' => $chu_nuoi
+				'chu_nuoi_id' => $chu_nuoi
 				);
 			} else {
 				$data = array(
@@ -112,7 +112,7 @@
 				'loai_pet_id' => $loai_pet,
 				'da_nhan_nuoi_id' => $da_nhan_nuoi_id,
 				'mo_ta' => $mo_ta,
-				'chu_nuoi' => $chu_nuoi
+				'chu_nuoi_id' => $chu_nuoi,
 				'anh' => $data["image"],
 				);
 			}
@@ -122,12 +122,18 @@
 			$this->db->update('tbl_pet', $data);
         }
 
-		public function xoa_thu_cung
+		public function xoa_thu_cung($id)
 		{
 			// Thực hiện việc xóa dữ liệu
 			$this->db->where('pet_id', $id);
 			$this->db->delete('tbl_pet');
         }
+
+        /*public function lay_loai_pet()
+        {
+        	$query = $this->db->query("SELECT tbl_loai_pet.loai_pet FROM tbl_pet INNER JOIN tbl_loai_pet on tbl_pet.loai_pet_id = tbl_loai_pet.loai_pet_id");
+      		return $query->result();
+        }*/
 
 	}
 ;?>

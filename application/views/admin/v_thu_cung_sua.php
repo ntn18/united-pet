@@ -1,81 +1,63 @@
-<div class="app-main__outer">
+            <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
-                            <h2>Quản trị thú cưng</h2>
-                            <div class="page-title-actions">
-                                <a href="<?=base_url();?>admin/quan_tri_thu_cung/them_moi_thu_cung">
-                                <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                    <span class="ladda-label">Thêm mới</span>
-                                    <span class="ladda-spinner"></span>
-                                    <div class="ladda-progress" style="width: 0px;"></div>
-                                </button>
-                                </a>
-                            </div>    
-                        </div>
-                    </div>
-                    <h4 class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-                        <div></div>
-                        <div class="col-12 col-md-3 p-0 mb-3">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                        </div>
-                    </h4>
-                    <div class="card mb-3">
-                        <div class="card-header pr-0 pl-0">
-                            <div class="row no-gutters align-items-center w-100">
-                                <div class="col font-weight-bold pl-3">Danh sách thú cưng</div>
-                                <div class="d-none d-md-block col-6 text-muted">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Loại Pet</div>
-                                        <div class="col-6">Đã nhận nuôi</div>
-                                        <div class="col-3">Thao tác</div>
+                            <div class="main-card mb-12 card" style="width:100%">
+                                <div class="card-body"><h3 class="card-title" style="font-size:20px;">SỬA THÚ CƯNG</h3>
+                                    <div>
+                                    <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_thu_cung/thuc_hien_sua_thu_cung';?>">
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Tên Pet</label>
+                                            <div class="col-sm-10">
+                                                <input name="txtTenPet" class="form-control" value="<?=$thu_cung->ten_pet;?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Loại Pet</label>
+                                            <div class="col-sm-10">
+                                                <input name="txtLoaiPet" class="form-control" value="<?=$thu_cung->loai_pet_id;?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Đã nhận nuôi</label>
+                                            <div class="col-sm-10">
+                                                <input name="txtDaNhanNuoiID" class="form-control" value="<?=$thu_cung->da_nhan_nuoi_id;?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Mô tả</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="txtMoTa" rows="5" class="form-control"><?=$thu_cung->mo_ta;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Ảnh</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" name="txtAnh" class="form-control">
+                                                <img src="<?=base_url()."assets/images/pet/".$thu_cung->anh;?>" style="width: 200px; height: auto; margin-top: 10px;";?>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label">Chủ nuôi</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="txtChuNuoi" rows="50" class="form-control"><?=$thu_cung->chu_nuoi_id;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-check">
+                                            <div class="" style="text-align: right; margin-right: 15px;">
+                                                <a href="<?=base_url();?>admin/quan_tri_thu_cung" class="btn btn-danger">Quay trở lại</a>    
+                                                <button class="btn btn-danger" onclick="alert('Sửa thông tin thành công!')">Xác nhận</button>
+                                                <input name="txtID" type="hidden" value="<?=$thu_cung->pet_id;?>">
+                                            </div>
+                                        </div>
+                                        
+                                    </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($danh_sach as $key => $row) {;?>
-                        <div class="card-body py-3">        
-                            <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_thu_cung/xem/<?=$row->pet_id;?>" class="text-big font-weight-semibold"><?=$row->ten_pet;?></a></div>
-                                <div class="d-none d-md-block col-6">        
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-3">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->loai_pet_id;?></a>
-                                            
-                                        </div>
-                                        <div class="media col-6 align-items-center">
-                                            <div class="media-body flex-truncate ml-2">
-                                                <?=$row->da_nhan_nuoi_id;?>
-                                            </div>
-                                        </div>                                        
-                                        <div class="col-3">
-                                            <a href="<?=base_url();?>admin/quan_tri_thu_cung/sua/<?=$row->pet_id;?>">
-                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                <span class="ladda-label">Sửa</span>
-                                                <span class="ladda-spinner"></span>
-                                                <div class="ladda-progress" style="width: 0px;"></div>
-                                            </button>
-                                            </a>
-                                            <a href="<?=base_url();?>admin/quan_tri_thu_cung/xoa/<?=$row->pet_id;?>">
-                                            <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
-                                                <span class="ladda-label">Xóa</span>
-                                                <span class="ladda-spinner"></span>
-                                                <div class="ladda-progress" style="width: 0px;"></div>
-                                            </button>
-                                            </a>
-                                        </div>    
-                                    </div>        
-                                </div>
-                            </div>        
-                        </div>
-                        <?php   
-                        }
-                        ;?>
-
-                        <div class="paging"><?php echo $paginator; ?></div>  
                     </div>
                 </div>
-    
                 </div>
     </div>
 </div>
@@ -321,7 +303,7 @@
                                             <label class="custom-control-label" for="exampleCustomCheckbox2444">&nbsp;</label></div>
                                     </div>
                                     <div class="widget-content-left mr-3">
-                                        <div class="widget-content-left"><img width="42" class="rounded" src="<?=base_url();?>assets/images/avatars/1.jpg" alt=""/></div>
+                                        <div class="widget-content-left"><img width="42" class="rounded" src="assets/images/avatars/1.jpg" alt=""/></div>
                                     </div>
                                     <div class="widget-content-left">
                                         <div class="widget-heading">Go grocery shopping</div>
@@ -400,42 +382,42 @@
                                         <div class="avatar-wrapper mt-2 avatar-wrapper-overlap">
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/1.jpg"
+                                                        src="assets/images/avatars/1.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/2.jpg"
+                                                        src="assets/images/avatars/2.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/3.jpg"
+                                                        src="assets/images/avatars/3.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/4.jpg"
+                                                        src="assets/images/avatars/4.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/5.jpg"
+                                                        src="assets/images/avatars/5.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/6.jpg"
+                                                        src="assets/images/avatars/6.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/7.jpg"
+                                                        src="assets/images/avatars/7.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm">
                                                 <div class="avatar-icon"><img
-                                                        src="<?=base_url();?>assets/images/avatars/8.jpg"
+                                                        src="assets/images/avatars/8.jpg"
                                                         alt=""></div>
                                             </div>
                                             <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
@@ -462,5 +444,5 @@
         </div>
     </div>
 </div>
-<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?=base_url();?>/assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
+<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?=base_url();?>assets/scripts/main.87c0748b313a1dda75f5.js"></script></body>
 </html>
