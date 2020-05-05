@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="media col-6 align-items-center">
                                             <div class="media-body flex-truncate ml-2">
-                                                <?=$row->ngay_dang;?>
+                                                <?=$row->ngay;?>
                                             </div>
                                         </div>                                        
                                         <div class="col-3">
