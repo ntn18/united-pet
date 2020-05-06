@@ -18,7 +18,7 @@
 			$query = $this->db->query("
 				SELECT * 
 				FROM tbl_news
-				WHERE id=".$id
+				WHERE id=".$id 
 			);
 
 			// Trả kết quả truy vấn dữ liệu

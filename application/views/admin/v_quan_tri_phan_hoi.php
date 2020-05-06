@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($danh_sach as $key => $row) {;?>
+                        <?php foreach ($danh_sach as $key => $row) {;?> 
                         <div class="card-body py-3">        
                             <div class="row no-gutters align-items-center">
                                 <div class="col"><a href="<?=base_url();?>admin/quan_tri_phan_hoi/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->tieu_de;?></a></div>
@@ -74,6 +74,8 @@
                         <?php   
                         }
                         ;?>
+                        
+                        <div class="paging"><?php echo $paginator; ?></div>  
 
                     </div>
                 </div>
