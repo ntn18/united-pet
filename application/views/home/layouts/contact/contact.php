@@ -80,7 +80,7 @@
                            <textarea name="txtLoiNhan" id="message" class="textarea-field form-control" rows="3"  required=""></textarea>
                         </div>
                      </div>
-                     <button onClick="alert('Thanks for your feedback')" type="submit" id="submit_btn" value="Submit" class="btn btn-primary">Gửi phản hôi</button>
+                     <button onClick="alert('Cảm ơn lời nhắn của bạn đén chúng tôi...')" type="submit" id="submit_btn" value="Submit" class="btn btn-primary">Gửi phản hôi</button>
                   </div>
                   <!-- /form-group-->
                   <!-- Contact results -->

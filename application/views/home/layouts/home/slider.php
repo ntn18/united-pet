@@ -1,6 +1,6 @@
 <div class="container-fluid p-0">
         <div id="slider" class="overlay-parallax-slider"
-            style="width:1200px;height:650px;margin:0 auto;margin-bottom: 0px; padding-top: 0px;">
+            style="width:1200px;height:650px;margin:0 auto;margin-bottom: 0px;">
             <!-- Slide 1 -->
             <div class="ls-slide overlay2" data-ls="duration:4000; transition2d:7;">
                 <!-- bg image  -->
