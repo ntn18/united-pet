@@ -82,7 +82,7 @@
                             </li>
                             <!-- menu item -->
                             <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url();?>tin_tuc">Bài viết</a>
+                                <a class="nav-link" href="<?=base_url();?>bai_viet">Bài viết</a>
                             </li>
                         </ul>
                         <!--/ul -->
