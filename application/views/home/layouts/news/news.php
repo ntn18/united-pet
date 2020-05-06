@@ -44,7 +44,7 @@
             <div class="col-md-12 mt-5">
                <!-- pagination -->
                <nav aria-label="pagination">
-                  <ul class="pagination"><?php echo $paginator; ?>
+                  <ul class="paging"><?php echo $paginator; ?>
                      <!-- <li class="page-item"><a class="page-link active" href="blog.html#">1</a></li>
                      <li class="page-item"><a class="page-link" href="blog.html#">2</a></li>
                      <li class="page-item"><a class="page-link" href="blog.html#">3</a></li>
