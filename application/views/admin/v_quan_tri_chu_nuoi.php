@@ -27,7 +27,7 @@
                                 <div class="d-none d-md-block col-6 text-muted">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">Họ tên</div>
-                                        <div class="col-6">ID thú cưng</div>
+                                        <div class="col-3">ID thú cưng</div>
                                         <div class="col-3">Thao tác</div>
                                     </div>
                                 </div>

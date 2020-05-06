@@ -17,9 +17,7 @@
     <!-- /jumbotron -->
 
     <!-- ==== Page Content ==== -->
-    <div class="page">
-        <?php $this->load->view('home/layouts/news/news')?>
-    </div>
+    <?php $this->load->view('home/layouts/news/news')?>
 
     <!-- ==== Newsletter - call to action ==== -->
     <?php $this->load->view('home/components/newsletter')?>

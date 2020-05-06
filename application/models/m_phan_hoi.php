@@ -72,6 +72,7 @@
 			$this->db->delete('tbl_phan_hoi');
         }
 
+
   //       public function getListHasPaginate($total, $start)
 		// {
 		// 	$this->db->limit($total, $start);
@@ -82,6 +83,18 @@
 		// public function countAll() {
 		// return $this->db->count_all('tbl_phan_hoi');
 		// }
+
+       public function getListHasPaginate($total, $start)
+    	{
+        	$this->db->limit($total, $start);
+        	$query = $this->db->get('tbl_phan_hoi');
+        	return $query->result();
+    	}
+
+    	public function countAll() {
+      		return $this->db->count_all('tbl_phan_hoi');
+    		}
+
 
 
           

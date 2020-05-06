@@ -38,228 +38,16 @@
                         <button class="search-icon"><span></span></button>
                     </div>
                     <button class="close"></button>
-                </div>
-                <ul class="header-megamenu nav">
-                    <li class="nav-item">
-                        <a href="javascript:void(0);" data-placement="bottom" rel="popover-focus" data-offset="300" data-toggle="popover-custom" class="nav-link">
-                            <i class="nav-link-icon pe-7s-gift"> </i>
-                            Menu Menu
-                            <i class="fa fa-angle-down ml-2 opacity-5"></i>
-                        </a>
-                        <div class="rm-max-width">
-                            <div class="d-none popover-custom-content">
-                                <div class="dropdown-mega-menu">
-                                    <div class="grid-menu grid-menu-3col">
-                                        <div class="no-gutters row">
-                                            <div class="col-sm-6 col-xl-4">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item-header nav-item">
-                                                        Overview
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">
-                                                            <i class="nav-link-icon lnr-inbox">
-                                                            </i>
-                                                            <span>
-                                                                Contacts
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">
-                                                            <i class="nav-link-icon lnr-book">
-                                                            </i>
-                                                            <span>
-                                                                Incidents
-                                                            </span>
-                                                            <div class="ml-auto badge badge-pill badge-danger">5
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">
-                                                            <i class="nav-link-icon lnr-picture">
-                                                            </i>
-                                                            <span>
-                                                                Companies
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a disabled="" href="javascript:void(0);" class="nav-link disabled">
-                                                            <i class="nav-link-icon lnr-file-empty">
-                                                            </i>
-                                                            <span>
-                                                                Dashboards
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item-header nav-item">
-                                                        Favourites
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">
-                                                            Reports Conversions
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">
-                                                            Quick Start
-                                                            <div class="ml-auto badge badge-success">New</div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Users &amp; Groups</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Proprieties</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item-header nav-item">Sales &amp; Marketing
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Queues
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Resource Groups
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Goal Metrics
-                                                            <div class="ml-auto badge badge-warning">3
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Campaigns
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a  class="nav-link" data-toggle="dropdown" aria-expanded="false">
-                            <span class="badge badge-pill badge-danger ml-0 mr-2">4</span>
-                            Settings
-                            <i class="fa fa-angle-down ml-2 opacity-5"></i>
-                        </a>
-                        <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu">
-                            <div class="dropdown-menu-header">
-                                <div class="dropdown-menu-header-inner bg-secondary">
-                                    <div class="menu-header-image opacity-5" style="background-image: url('assets/images/dropdown-header/abstract2.jpg');"></div>
-                                    <div class="menu-header-content">
-                                        <h5 class="menu-header-title">Overview</h5>
-                                        <h6 class="menu-header-subtitle">Dropdown menus for everyone</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="scroll-area-xs">
-                                <div class="scrollbar-container">
-                                    <h6 tabindex="-1" class="dropdown-header">Key Figures</h6>
-                                    <button type="button" tabindex="0" class="dropdown-item">Service Calendar</button>
-                                    <button type="button" tabindex="0" class="dropdown-item">Knowledge Base</button>
-                                    <button type="button" tabindex="0" class="dropdown-item">Accounts</button>
-                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                    <button type="button" tabindex="0" class="dropdown-item">Products</button>
-                                    <button type="button" tabindex="0" class="dropdown-item">Rollup Queries</button>
-                                </div>
-                            </div>
-                            <ul class="nav flex-column">
-                                <li class="nav-item-divider nav-item"></li>
-                                <li class="nav-item-btn nav-item">
-                                    <button class="btn-wide btn-shadow btn btn-danger btn-sm">Cancel</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>        
+                </div>     
             </div>
             <div class="app-header-right">
                 <div class="header-dots">
                     <div class="dropdown">
                         <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
                             <span class="icon-wrapper icon-wrapper-alt rounded-circle">
-                                <span class="icon-wrapper-bg bg-primary"></span>
-                                <i class="icon text-primary ion-android-apps"></i>
-                            </span>
-                        </button>
-                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-menu-header">
-                                <div class="dropdown-menu-header-inner bg-plum-plate">
-                                    <div class="menu-header-image" style="background-image: url('assets/images/dropdown-header/abstract4.jpg');"></div>
-                                    <div class="menu-header-content text-white">
-                                        <h5 class="menu-header-title">Grid Dashboard</h5>
-                                        <h6 class="menu-header-subtitle">Easy grid navigation inside dropdowns</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-menu grid-menu-xl grid-menu-3col">
-                                <div class="no-gutters row">
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                            Automation
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-piggy icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                            Reports
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-config icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                            Settings
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-browser icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                            Content
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-hourglass icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                            Activity
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-6 col-xl-4">
-                                        <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                            <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"> </i>
-                                            Contacts
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="nav flex-column">
-                                <li class="nav-item-divider nav-item"></li>
-                                <li class="nav-item-btn text-center nav-item">
-                                    <button class="btn-shadow btn btn-primary btn-sm">Follow-ups</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
-                            <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                                 <span class="icon-wrapper-bg bg-danger"></span>
                                 <i class="icon text-danger icon-anim-pulse ion-android-notifications"></i>
-                                <span class="badge badge-dot badge-dot-sm badge-danger">Notifications</span>
+                                <span class="badge badge-dot badge-dot-sm badge-danger">Thông báo</span>
                             </span>
                         </button>
                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
@@ -267,25 +55,25 @@
                                 <div class="dropdown-menu-header-inner bg-deep-blue">
                                     <div class="menu-header-image opacity-1" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
                                     <div class="menu-header-content text-dark">
-                                        <h5 class="menu-header-title">Notifications</h5>
-                                        <h6 class="menu-header-subtitle">You have <b>21</b> unread messages</h6>
+                                        <h5 class="menu-header-title">Thông báo</h5>
+                                        <h6 class="menu-header-subtitle">Bạn có <b>1</b> tin nhắn chưa đọc</h6>
                                     </div>
                                 </div>
                             </div>
                             <ul class="tabs-animated-shadow tabs-animated nav nav-justified tabs-shadow-bordered p-3">
                                 <li class="nav-item">
                                     <a role="tab" class="nav-link active" data-toggle="tab" href="#tab-messages-header">
-                                        <span>Messages</span>
+                                        <span>Tin nhắn</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a role="tab" class="nav-link" data-toggle="tab" href="#tab-events-header">
-                                        <span>Events</span>
+                                        <span>Cứu hộ</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a role="tab" class="nav-link" data-toggle="tab" href="#tab-errors-header">
-                                        <span>System Errors</span>
+                                        <span>Lỗi hệ thống</span>
                                     </a>
                                 </li>
                             </ul>
@@ -298,105 +86,38 @@
                                                     <div class="vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--one-column">
                                                         <div class="vertical-timeline-item dot-danger vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">All Hands Meeting</h4><span class="vertical-timeline-element-date"></span></div>
+                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Xin chào</h4><span class="vertical-timeline-element-date"></span></div>
                                                             </div>
                                                         </div>
                                                         <div class="vertical-timeline-item dot-warning vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><p>Yet another one, at <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span>
+                                                                <div class="vertical-timeline-element-content bounce-in"><p>Họp team<span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="vertical-timeline-item dot-success vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
                                                                 <div class="vertical-timeline-element-content bounce-in">
-                                                                    <h4 class="timeline-title">Build the production release
-                                                                        <span class="badge badge-danger ml-2">NEW</span>
+                                                                    <h4 class="timeline-title">Xây dựng nhà chung
+                                                                        <span class="badge badge-danger ml-2">MỚI</span>
                                                                     </h4>
                                                                     <span class="vertical-timeline-element-date"></span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="vertical-timeline-item dot-primary vertical-timeline-element">
-                                                            <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in">
-                                                                    <h4 class="timeline-title">Something not important
-                                                                        <div class="avatar-wrapper mt-2 avatar-wrapper-overlap">
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/1.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/2.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/3.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/4.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/5.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/9.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/7.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                                                <div class="avatar-icon"><img
-                                                                                        src="assets/images/avatars/8.jpg"
-                                                                                        alt=""></div>
-                                                                            </div>
-                                                                            <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
-                                                                                <div class="avatar-icon"><i>+</i></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </h4>
-                                                                    <span class="vertical-timeline-element-date"></span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="vertical-timeline-item dot-info vertical-timeline-element">
-                                                            <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">This dot has an info state</h4><span class="vertical-timeline-element-date"></span></div>
                                                             </div>
                                                         </div>
                                                         <div class="vertical-timeline-item dot-danger vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">All Hands Meeting</h4><span class="vertical-timeline-element-date"></span></div>
+                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Đón chó</h4><span class="vertical-timeline-element-date"></span></div>
                                                             </div>
                                                         </div>
                                                         <div class="vertical-timeline-item dot-warning vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><p>Yet another one, at <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span>
+                                                                <div class="vertical-timeline-element-content bounce-in"><p>Đón mèo <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="vertical-timeline-item dot-success vertical-timeline-element">
-                                                            <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in">
-                                                                    <h4 class="timeline-title">Build the production release
-                                                                        <span class="badge badge-danger ml-2">NEW</span>
-                                                                    </h4>
-                                                                    <span class="vertical-timeline-element-date"></span></div>
                                                             </div>
                                                         </div>
                                                         <div class="vertical-timeline-item dot-dark vertical-timeline-element">
                                                             <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">This dot has a dark state</h4><span class="vertical-timeline-element-date"></span></div>
+                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Tôi cần giúp đỡ</h4><span class="vertical-timeline-element-date"></span></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -412,52 +133,21 @@
                                                 <div class="vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
                                                     <div class="vertical-timeline-item vertical-timeline-element">
                                                         <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-success"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">All Hands Meeting</h4>
-                                                                <p>Lorem ipsum dolor sic amet, today at <a href="javascript:void(0);">12:00 PM</a></p><span class="vertical-timeline-element-date"></span></div>
+                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Case 1234</h4>
+                                                                <p>6/5/2020 <a href="javascript:void(0);">12:00 PM</a></p><span class="vertical-timeline-element-date"></span></div>
                                                         </div>
                                                     </div>
                                                     <div class="vertical-timeline-item vertical-timeline-element">
                                                         <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-warning"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><p>Another meeting today, at <b class="text-danger">12:00 PM</b></p>
-                                                                <p>Yet another one, at <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span></div>
+                                                            <div class="vertical-timeline-element-content bounce-in"><p>Case 1233 <b class="text-danger">12:00 PM</b></p>
+                                                                <p>Tai nạn ở Đống Đa <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span></div>
                                                         </div>
                                                     </div>
                                                     <div class="vertical-timeline-item vertical-timeline-element">
                                                         <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-danger"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Build the production release</h4>
-                                                                <p>Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud</p><span
+                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Case 1232</h4>
+                                                                <p>Bị bỏ rơi ở Cầu Giấy</p><span
                                                                         class="vertical-timeline-element-date"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-item vertical-timeline-element">
-                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-primary"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title text-success">Something not important</h4>
-                                                                <p>Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud</p><span class="vertical-timeline-element-date"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-item vertical-timeline-element">
-                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-success"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">All Hands Meeting</h4>
-                                                                <p>Lorem ipsum dolor sic amet, today at <a href="javascript:void(0);">12:00 PM</a></p><span class="vertical-timeline-element-date"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-item vertical-timeline-element">
-                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-warning"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><p>Another meeting today, at <b class="text-danger">12:00 PM</b></p>
-                                                                <p>Yet another one, at <span class="text-success">15:00 PM</span></p><span class="vertical-timeline-element-date"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-item vertical-timeline-element">
-                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-danger"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">Build the production release</h4>
-                                                                <p>Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud</p><span
-                                                                        class="vertical-timeline-element-date"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-item vertical-timeline-element">
-                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-primary"> </i></span>
-                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title text-success">Something not important</h4>
-                                                                <p>Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud</p><span class="vertical-timeline-element-date"></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -477,8 +167,8 @@
                                                     <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
                                                     <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
                                                 </div>
-                                                <div class="results-subtitle">All caught up!</div>
-                                                <div class="results-title">There are no system errors!</div>
+                                                <div class="results-subtitle">Đã xử lý!</div>
+                                                <div class="results-title">Không có lỗi hệ thống!</div>
                                             </div>
                                         </div>
                                     </div>
@@ -487,7 +177,7 @@
                             <ul class="nav flex-column">
                                 <li class="nav-item-divider nav-item"></li>
                                 <li class="nav-item-btn text-center nav-item">
-                                    <button class="btn-shadow btn-wide btn-pill btn btn-focus btn-sm">View Latest Changes</button>
+                                    <button class="btn-shadow btn-wide btn-pill btn btn-focus btn-sm">Gần nhất</button>
                                 </li>
                             </ul>
                         </div>
@@ -504,9 +194,9 @@
                                 <div class="dropdown-menu-header-inner bg-premium-dark">
                                     <div class="menu-header-image" style="background-image: url('assets/images/dropdown-header/abstract4.jpg');"></div>
                                     <div class="menu-header-content text-white">
-                                        <h5 class="menu-header-title">Users Online
+                                        <h5 class="menu-header-title">Người dùng online
                                         </h5>
-                                        <h6 class="menu-header-subtitle">Recent Account Activity Overview
+                                        <h6 class="menu-header-subtitle">Tổng quan người dùng online
                                         </h6>
                                     </div>
                                 </div>
@@ -536,17 +226,7 @@
                                     <div id="dashboard-sparkline-carousel-3-pop"></div>
                                 </div>
                             </div>
-                            <ul class="nav flex-column">
-                                <li class="nav-item-divider mt-0 nav-item">
-                                </li>
-                                <li class="nav-item-btn text-center nav-item">
-                                    <button class="btn-shine btn-wide btn-pill btn btn-warning btn-sm">
-                                        <i class="fa fa-cog fa-spin mr-2">
-                                        </i>
-                                        View Details
-                                    </button>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -603,11 +283,9 @@
                                                         <a href="javascript:void(0);" class="nav-link">Đổi mật khẩu
                                                         </a>
                                                     </li>
-                                                    <li class="nav-item-header nav-item">Tài khoản của tôi
-                                                    </li>
                                                     <li class="nav-item">
                                                         <a href="javascript:void(0);" class="nav-link">Cài đặt
-                                                            <div class="ml-auto badge badge-success">New
+                                                            <div class="ml-auto badge badge-success">Mới
                                                             </div>
                                                         </a>
                                                     </li>
@@ -617,41 +295,13 @@
                                                             </div>
                                                         </a>
                                                     </li>
-                                                    <li class="nav-item">
-                                                        <a href="javascript:void(0);" class="nav-link">Logs
-                                                        </a>
-                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <ul class="nav flex-column">
                                             <li class="nav-item-divider mb-0 nav-item"></li>
                                         </ul>
-                                        <div class="grid-menu grid-menu-2col">
-                                            <div class="no-gutters row">
-                                                <div class="col-sm-6">
-                                                    <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
-                                                        <i class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
-                                                        Message Inbox
-                                                    </button>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
-                                                        <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
-                                                        <b>Support Tickets</b>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item-divider nav-item">
-                                            </li>
-                                            <li class="nav-item-btn text-center nav-item">
-                                                <button class="btn-wide btn btn-primary btn-sm">
-                                                    Open Messages
-                                                </button>
-                                            </li>
-                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -667,13 +317,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="header-btn-lg">
-                    <button type="button" class="hamburger hamburger--elastic open-right-drawer">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>        </div>
+                </div>
         </div>
     </div>    <div class="ui-theme-settings">
         <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">

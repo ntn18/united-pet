@@ -73,6 +73,7 @@
     public function getListHasPaginate($total, $start)
 		{
 			$this->db->limit($total, $start);
+			$this->db->order_by("case_id","desc");
 			$query = $this->db->get('tbl_case');
 			return $query->result();
 		}
