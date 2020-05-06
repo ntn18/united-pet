@@ -44,7 +44,7 @@
             </ul>
             <!-- /ul -->		
             <!-- Button -->	
-            <a href="careers.html#" class="btn btn-sm btn-secondary mt-4">Đăng kí</a>
+            <a href="#" class="btn btn-sm btn-secondary mt-4">Gửi mail đăng kí ngay</a>
          </div>
          <!-- /card -->
       </div>

@@ -5,7 +5,7 @@ class Tinh_nguyen extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-
-		$this->load->view('v_tinh_nguyen');
+		$data['title'] = "Tình nguyện | United Pets";
+		$this->load->view('v_tinh_nguyen',$data);
 	}
 }

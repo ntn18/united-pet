@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- page title -->
-    <title>United Pets - Cứu hộ động vật</title>
+    <title><?=$title;?></title>
     <!--[if lt IE 9]>
       <script src="js/respond.js"></script>
       <![endif]-->
