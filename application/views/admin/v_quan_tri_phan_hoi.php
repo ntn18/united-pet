@@ -25,14 +25,12 @@
                         <div class="card-header pr-0 pl-0">
                             <div class="row no-gutters align-items-center w-100">
                                 <div class="col font-weight-bold pl-3">Tiêu đề phản hồi</div>
-                                <div class="d-none d-md-block col-6 text-muted">
+                                <div class="d-none d-md-block col-9 text-muted">
                                     <div class="row no-gutters align-items-center">
-                                        
+                                        <div class="col-4">Nội dung</div>
                                         <div class="col-3">Người gửi</div>
-                                        <div class="col-6">Địa Chỉ Email</div>
-                                        <div class="col-6">Nội dung</div>
-
-                                        <div class="col-3">Thao tác</div>
+                                        <div class="col-3">Email</div>
+                                        <div class="col-2">Thao tác</div>
                                     </div>
                                 </div>
                             </div>
