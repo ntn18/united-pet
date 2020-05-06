@@ -25,23 +25,29 @@ class Quan_tri_phan_hoi extends CI_Controller {
 	
 	public function index()
 	{
+		//$data['email']=$this->session->userdata('email');
+		// Khai báo tiêu đề của trang
 		$data['title'] = "Quản trị phản hồi | United Pets";
 
-		  // Phân trang
-        $config['total_rows'] = $this->m_phan_hoi->countAll();
+		// Lấy ra danh sách tin tức
+		$data['danh_sach'] = $this->m_phan_hoi->lay_danh_sach_phan_hoi();
+
+		// Phân trang
+        /*$config['total_rows'] = $this->m_phan_hoi->countAll();
         $config['base_url'] = base_url() . "admin/Quan_tri_phan_hoi/index";
         $config['per_page'] = 3;
-
-		$start = $this->uri->segment(4);
+        // Lấy danh sách
+        $start = $this->uri->segment(4);
         $data['danh_sach'] = $this->m_phan_hoi->getListHasPaginate($config['per_page'], $start);
-		
-		$this->pagination->initialize($config);
-        $paginator = $this->pagination->create_links();
-        $data['paginator'] = $paginator;
 
-		$this->load->view('admin/v_header', $data);
-		$this->load->view('admin/v_menu');
-		$this->load->view('admin/v_quan_tri_phan_hoi');
+        $this->pagination->initialize($config);
+        $paginator = $this->pagination->create_links();
+        $data['paginator'] = $paginator;*/
+
+        // Hiển thị dữ liệu ra view
+        $this->load->view('admin/v_header', $data);
+        $this->load->view('admin/v_menu');
+        $this->load->view('admin/v_quan_tri_phan_hoi', $data);
 	}
 	// public function index()
  //    {

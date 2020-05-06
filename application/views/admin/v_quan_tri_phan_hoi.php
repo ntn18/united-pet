@@ -73,7 +73,7 @@
                         }
                         ;?>
                         
-                        <div class="paging"><?php echo $paginator; ?></div>   
+                        <!--div class="paging"><?php echo $paginator; ?></div-->   
 
                     </div>
                 </div>
