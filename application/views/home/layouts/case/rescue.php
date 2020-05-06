@@ -16,6 +16,8 @@
       </div>
 	  <!-- /col-lg -->
    </div>
+
+   <?php foreach ($danh_sach as $key => $row) {;?>
    <!-- Gallery -->
    <div id="gallery-isotope" class="row row-eq-height mt-lg-5">
       <!-- Rescue 1 -->
@@ -25,22 +27,21 @@
                <div class="col-md-5">
                   <!-- Image -->
                   <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="rescue-single.html">
-                     <img src="img/adoption/adoption1.jpg" class="img-fluid" alt="">
+                     <a href="<?=base_url();?>cuu_ho/xem/<?=$row->case_id;?>">
                      </a>
                   </div>
                </div>
                <div class="col-md-7 res-margin">
                   <!-- Name -->
                   <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1234</a></h5>
+                     <h5 class="adoption-header"><a href="<?=base_url();?>cuu_ho/xem/<?=$row->case_id;?>"><?=$row->case_id;?></h5>
                      <!-- List -->
                      <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span> Đã tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Mèo ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
+                        <li><strong>Tiếp nhận:</strong><span><?=$row->tiep_nhan_id;?></span></li>
+                        <li><strong>Địa điểm:</strong><?=$row->dia_diem_cuu;?></li>
+                        <li><strong>Loài:</strong><?=$row->loai_pet_id;?></li>
+                        <li><strong>Tình trạng:</strong><?=$row->tinh_trang;?></li>
+                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"><?=$row->muc_do_id;?></span></li>
                      </ul>
                   </div>
                </div>
@@ -48,7 +49,7 @@
                   <!-- Button -->	
                   <div class="text-center">
                      <!-- button-->
-                     <a href="adoption-single.html" class="btn btn-primary">Thêm thông tin</a>
+                     <a href="<?=base_url();?>bai_viet/xem/<?=$row->case_id;?>" class="btn btn-primary">Thêm thông tin</a>
                   </div>
                   <!-- /text-center -->
                </div>
@@ -57,305 +58,21 @@
             <!-- /adopt-card -->
          </div>
          <!-- /isotope-item--> 
+         <?php   
+                        }
+                        ;?>
       </div>
       <!-- /col-lg- --> 
       <!-- Rescue 2 -->
-      <div class="cats col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="adoption-single.html">
-                     <img src="img/adoption/adoption2.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1233</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span style="color: orangered;"> Chưa tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Chó ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn gãy chân</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="rescue-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 3 -->
-      <div class="cats col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="adoption-single.html">
-                     <img src="img/adoption/adoption3.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1232</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span style="color: orangered;"> Chưa tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Chó ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn gãy chân</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="rescue-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 4 -->
-      <div class="dogs col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="rescue-single.html">
-                     <img src="img/adoption/adoption4.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1231</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span> Đã tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Mèo ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="adoption-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 5 -->
-      <div class="dogs col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="rescue-single.html">
-                     <img src="img/adoption/adoption5.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1230</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span> Đã tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Mèo ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="adoption-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 6 -->
-      <div class="dogs col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="rescue-single.html">
-                     <img src="img/adoption/adoption6.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1229</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span> Đã tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Mèo ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="adoption-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 7 -->
-      <div class="cats col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="adoption-single.html">
-                     <img src="img/adoption/adoption7.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1228</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span style="color: orangered;"> Chưa tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Chó ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn gãy chân</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="rescue-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-      <!-- Rescue 8 -->
-      <div class="cats col-lg-6">
-         <div class="isotope-item">
-            <div class="adopt-card res-margin row bg-light pattern2">
-               <div class="col-md-5">
-                  <!-- Image -->
-                  <div class="adopt-image d-flex flex-wrap align-items-center ">
-                     <a href="adoption-single.html">
-                     <img src="img/adoption/adoption8.jpg" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 res-margin">
-                  <!-- Name -->
-                  <div class="caption-adoption">
-                     <h5 class="adoption-header"><a href="rescue-single.html">1227</a></h5>
-                     <!-- List -->
-                     <ul class="list-unstyled">
-                        <li><strong>Tiếp nhận:</strong><span style="color: orangered;"> Chưa tiếp nhận</span></li>
-                        <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
-                        <li><strong>Loài:</strong> Chó ta</li>
-                        <li><strong>Tình trạng:</strong> Bị tai nạn gãy chân</li>
-                        <li><strong>Mức độ:</strong><span style="color: red;font-weight: bold;"> NGUY HIỂM</span></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-12 mt-3">
-                  <!-- Button -->	
-                  <div class="text-center">
-                     <!-- button-->
-                     <a href="rescue-single.html" class="btn btn-primary">Thêm thông tin</a>
-                  </div>
-                  <!-- /text-center -->
-               </div>
-               <!-- /col-md -->
-            </div>
-            <!-- /adopt-card -->
-         </div>
-         <!-- /isotope-item--> 
-      </div>
-      <!-- /col-lg- --> 
-   </div>
-   <!-- /gallery-isotope-->	
+      	
 	    <div class="col-md-12 mt-5">
 		   <!-- pagination -->
 		   <nav aria-label="pagination">
-			  <ul class="pagination">
-				 <li class="page-item"><a class="page-link active" href="adoption.html#">1</a></li>
+			  <ul class="pagination"><?php echo $paginator; ?>
+				 <!--<li class="page-item"><a class="page-link active" href="adoption.html#">1</a></li>
 				 <li class="page-item"><a class="page-link" href="adoption.html#">2</a></li>
 				 <li class="page-item"><a class="page-link" href="adoption.html#">3</a></li>
-				 <li class="page-item"><a class="page-link" href="adoption.html#">Tiếp theo</a></li>
+				 <li class="page-item"><a class="page-link" href="adoption.html#">Tiếp theo</a></li>-->
 			  </ul>
 		   </nav>
 		   <!-- /nav -->
