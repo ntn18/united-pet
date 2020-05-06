@@ -6,6 +6,6 @@ class Phan_hoi extends CI_Controller {
 	{
 		$this->load->helper('url');
 
-		$this->load->view('v_phan_hoi');
+		$this->load->view('v_phan_hoi'); 
 	}
 }

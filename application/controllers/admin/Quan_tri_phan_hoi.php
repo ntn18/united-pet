@@ -21,7 +21,7 @@ class Quan_tri_phan_hoi extends CI_Controller {
 		if ($this->session->userdata('email')=="") {
 			redirect(base_url()."admin/dang_nhap.html");
 		}
-	}
+	} 
 	
 	public function index()
 	{

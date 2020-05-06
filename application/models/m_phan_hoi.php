@@ -13,7 +13,7 @@
 		// 	// Trả kết quả truy vấn dữ liệu
   //           return $query->num_rows();
 		// }
-		
+		 
 		public function lay_danh_sach_phan_hoi()
 		{
 			$query = $this->db->query("

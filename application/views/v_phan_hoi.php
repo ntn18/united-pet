@@ -19,7 +19,7 @@
     <!-- ==== Page Content ==== -->
     <div class="page">
         <?php $this->load->view('home/layouts/contact/contact')?> 
-    <!-- </div>
+    <!-- </div> 
      <div id="contact_form">
                   <div class="form-group">
                     <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_phan_hoi/thuc_hien_them_moi_phan_hoi';?>">

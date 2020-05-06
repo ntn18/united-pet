@@ -112,7 +112,7 @@
                   <!-- /card-img -->
                   <div class="card-body">
                      <!-- event info -->	
-                     <a href="event-single.php">
+                     <a href="event-single.php"> 
                         <h6 class="card-title">Hà Nội</h6>
                      </a>
                      <!-- list -->
