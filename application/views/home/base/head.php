@@ -34,6 +34,7 @@
     <!-- LayerSlider CSS -->
     <link rel="stylesheet" href="vendor/layerslider/css/layerslider.css">
 
+    <?php $this->load->view('home/base/style')?>
     <style>
     /* boxed */
     #top.boxed {

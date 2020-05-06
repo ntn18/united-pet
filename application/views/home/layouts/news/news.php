@@ -7,16 +7,16 @@
                <?php foreach ($danh_sach as $key => $row) {;?>
                <div class="col-lg-6 res-margin">
                   <!-- blog-box -->
-                  <div class="blog-box">
+                  <div class="blog-box" style="margin-bottom:40px;">
                      <!-- image -->
                      <a href="<?=base_url();?>bai_viet/xem/<?=$row->id;?>">
-                        <div class="image"><img src="<?=base_url()."assets/images/news/".$row->anh_minh_hoa;?>" alt=""/></div>
+                        <div class="image" style="height:200px;"><img src="<?=base_url()."assets/images/news/".$row->anh_minh_hoa;?>" alt=""/></div>
                      </a>
                      <!-- blog-box-caption -->
-                     <div class="blog-box-caption">
+                     <div class="blog-box-caption" style="height:240px;">
                         <!-- date -->
                         <div class="date"><?=$row->ngay_dang;?></div>
-                        <a href="<?=base_url();?>bai_viet/xem/<?=$row->id;?>">
+                        <a href="<?=base_url();?>bai_viet/xem/<?=$row->id;?>" class="title">
                            <h4><?=$row->tieu_de;?></h4>
                         </a>
                         <!-- /link -->
