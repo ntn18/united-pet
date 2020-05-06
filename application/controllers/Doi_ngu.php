@@ -5,7 +5,7 @@ class Doi_ngu extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-
-		$this->load->view('v_doi_ngu');
+		$data['title'] = "Đội ngũ tình nguyện | United Pets";
+		$this->load->view('v_doi_ngu', $data);
 	}
 }

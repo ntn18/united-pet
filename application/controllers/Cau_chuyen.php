@@ -5,7 +5,7 @@ class Cau_chuyen extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-
-		$this->load->view('v_cau_chuyen');
+		$data['title'] = "câu chuyện | United Pets";
+		$this->load->view('v_cau_chuyen', $data);
 	}
 }

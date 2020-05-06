@@ -23,10 +23,10 @@
                     <div class="card mb-3">
                         <div class="card-header pr-0 pl-0">
                             <div class="row no-gutters align-items-center w-100">
-                                <div class="col font-weight-bold pl-3">ID</div>
+                                <div class="col font-weight-bold pl-3">Họ tên</div>
                                 <div class="d-none d-md-block col-6 text-muted">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col-3">Họ tên</div>
+                                        <div class="col-3">SĐT</div>
                                         <div class="col-3">ID thú cưng</div>
                                         <div class="col-3">Thao tác</div>
                                     </div>
@@ -36,14 +36,14 @@
                         <?php foreach ($danh_sach as $key => $row) {;?>
                         <div class="card-body py-3">        
                             <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xem/<?=$row->chu_nuoi_id;?>" class="text-big font-weight-semibold"><?=$row->chu_nuoi_id;?></a></div>
+                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xem/<?=$row->chu_nuoi_id;?>" class="text-big font-weight-semibold"><?=$row->ho_ten;?></a></div>
                                 <div class="d-none d-md-block col-6">        
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">
-                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->ho_ten;?></a>
+                                            <a href="javascript:void(0)" class="d-block text-truncate"><?=$row->sdt;?></a>
                                             
                                         </div>
-                                        <div class="media col-6 align-items-center">
+                                        <div class="media col-3 align-items-center">
                                             <div class="media-body flex-truncate ml-2">
                                                 <?=$row->pet_id;?>
                                             </div>
