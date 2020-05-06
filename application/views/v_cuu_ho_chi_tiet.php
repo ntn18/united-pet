@@ -13,16 +13,12 @@
     <!-- /nav -->
 
     <!-- Jumbotron -->
-    <?php $this->load->view('home/layouts/about/jumbotron')?>
+    <?php $this->load->view('home/layouts/case/jumbotron_detail')?>
     <!-- /jumbotron -->
 
     <!-- ==== Page Content ==== -->
     <div class="page">
-        <?php $this->load->view('home/layouts/about/about_section')?>
-        <!-- Section  -->
-        <?php $this->load->view('home/layouts/home/counter_section')?>
-        <!-- /section ends-->
-        <?php $this->load->view('home/layouts/about/about')?>
+        <?php $this->load->view('home/layouts/case/rescue_detail')?>
     </div>
 
     <!-- ==== Newsletter - call to action ==== -->

@@ -9,7 +9,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- page title -->
-      <title>United Pets - Cứu hộ động vật</title>
+      <title>Chi tiết cứu hộ - United Pets</title>
       <!--[if lt IE 9]>
       <script src="js/respond.js"></script>
       <![endif]-->
@@ -140,7 +140,7 @@
                         <!-- Start Contact Info -->
                         <ul class="contact-details float-left">
                            <li><i class="fa fa-envelope"></i><a href="mailto:email@hotro.com">email@hotro.com</a></li>
-                           <li><i class="fa fa-phone"></i>(+84) 456-7889</li>
+                           <li><i class="fa fa-phone"></i>Hotline: 1900-123-456</li>
                         </ul>
                         <!-- End Contact Info -->
                         <!-- Start Social Links -->
@@ -162,7 +162,7 @@
             <div class="navbar container-fluid">
                <div class="container ">
                   <!-- logo -->
-                  <a class="nav-brand" href="index.php">
+                  <a class="nav-brand" href="index.html">
                   <img src="img/logo.png" alt="" class="img-fluid">
                   </a>
                   <!-- Navbartoggler -->
@@ -183,10 +183,14 @@
                            <div class="dropdown-menu pattern2" aria-labelledby="about-dropdown">
                               <a class="dropdown-item" href="about.html">Giới thiệu</a>
                               <a class="dropdown-item" href="team.html">Đội ngũ tình nguyện</a>
+                              <a class="dropdown-item" href="donation.html">Quyên góp</a>
                               <a class="dropdown-item" href="events.html">Sự kiện</a>
                            </div>
                         </li>
-                        
+                        <!-- menu item -->
+                        <li class="nav-item">
+                           <a class="nav-link" href="rescue.html">Cứu hộ</a>
+                        </li>
                         <!-- menu item -->
                         <li class="nav-item dropdown">
                            <a class="nav-link dropdown-toggle" href="adoption.html" id="adopt-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nhận nuôi</a>
@@ -201,15 +205,11 @@
                         </li>
                         <!-- menu item -->
                         <li class="nav-item">
-                           <a class="nav-link" href="donation.html">Quyên góp</a>
-                        </li>
-                        <!-- menu item -->
-                        <li class="nav-item">
                            <a class="nav-link" href="contact.html">Liên hệ</a>
                         </li>
                         <!-- menu item -->
                         <li class="nav-item">
-                           <a class="nav-link" href="blog.html">Blogs</a>
+                           <a class="nav-link" href="blog.html">Bài viết</a>
                         </li>
                      </ul>
                      <!--/ul -->
@@ -226,151 +226,197 @@
 <div class="jumbotron jumbotron-fluid" data-center="background-size: 100%;"
    data-top-bottom="background-size: 110%;">
    <div class="container" >
-      <!-- jumbo-heading -->
       <div class="jumbo-heading" data-aos="fade-up">
-         <h1>Đội ngũ tình nguyện viên</h1>
+         <h1>Cứu hộ</h1>
          <!-- Breadcrumbs -->
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-               <li class="breadcrumb-item active" aria-current="page">Tình nguyện viên</li>
+               <li class="breadcrumb-item"><a href="rescue.html">Cứu hộ</a></li>
+               <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
             </ol>
          </nav>
-         <!-- /breadcrumb -->
       </div>
-      <!-- /jumbo-heading -->
    </div>
-   <!-- /container -->
+   <!-- /jumbo-heading -->
 </div>
 <!-- /jumbotron -->
 <!-- ==== Page Content ==== -->
-<div class="page">
-   <div class="container block-padding">
-      <!-- Team style 2 -->
-      <h3 class="text-center">Đội ngũ thành viên</h3>
-      <div class="container mt-5">
+<div class="page container">
+   <div class="row">
+      <!-- page with sidebar starts -->
+      <div class="col-lg-9 page-with-sidebar">
          <div class="row">
-            <!-- team carousel -->  
-<div class="col-md-12 carousel-3items owl-carousel owl-theme">
-   <!-- Team member 1 -->
-   <div class="team-style2 col-lg-12">
-      <!-- image and social icons -->
-      <div class="img-box">
+            <div class="adopt-card col-lg-12">
+               <!-- Image -->
+               <div class="col-md-4 float-left">
+                  <img src="img/adoption/adoption1.jpg" class="img-fluid rounded" alt="">
+               </div>
+               <!-- Name -->
+               <div class="caption-adoption col-md-8 float-right res-margin">
+                  <h2>Ca cứu hộ 1234</h2>
+                  <!-- List -->
+                  <ul class="list-unstyled mt-3">
+                     <li><strong>Địa điểm:</strong> Đống Đa, Hà Nội</li>
+                     <li><strong>Loài:</strong> Chó ta</li>
+                     <li><strong>Tình trạng:</strong> Bị tai nạn gãy chân</li>
+                  </ul>
+                  <!-- Adopt info -->
+                  <ul class="adopt-card-info list-unstyled">
+                     <li><i class="flaticon-veterinarian-hospital"></i>CHƯA TIẾP NHẬN</li>
+                     <li><i class="flaticon-dog-4"></i>Mức độ: CẦN THIẾT</li>
+                  </ul>
+               </div>
+			   <!-- /caption-adoption -->
+            </div>
+            <!-- /adopt-card -->
+         </div>
+         <!-- /row -->
+         <div class="col-lg-12">
+            <h3>Chi tiết</h3>
+            <p>[HÀ NỘI - CHÓ LẠC TÌM CHỦ]</p>
+            <p>Tin từ bạn Nga Quynh (https://www.facebook.com/quynh.nga.587).</p>
+            <p>Lúc nãy mình đi qua khu ngã tư Vạn Bảo Vạn phúc Kim Mã, có thấy một chú chó phốc sóc màu vàng trắng đi lạc, loanh quanh mà ko có chủ, mình đang ốm bé ngồi ở đó.
+               
+               Bé đang rất buồn và chờ chủ qua đón. Bạn nào bị lạc mất bé liên hệ với mình nhé, trông bé rất tội.
+               
+               Số điện thoại của mình: 0963387291
+               
+               Ai nhận xin vui lòng mô tả rõ đặc điểm nhận dạng của bé nhé.
+            </p>
+            <p class="font-weight-bold">Nếu bạn có thể giúp, hãy hãy gọi ngay đến hotline <span style="color: red;font-size: 20px;font-weight: bold;">1900-123-456</span> hoặc <a href="#">Liên hệ với chúng tớ</a>
+            </p>
+            <a href="#" class="btn btn btn-secondary mt-2">Liên hệ</a>
+         </div>
+         <!-- /col-lg-12 -->
+         <div class="col-lg-12">
+            <h4 class="mt-5">Một số hình ảnh</h4>
+			 <!-- divider -->
+			<hr class="small-divider left">
+            <div class="carousel-3items owl-carousel col-lg-12 magnific-popup">
+               <!-- photo1 -->
+               <a href="img/adoption/adoption1.jpg" title="your caption here">
+               <img alt="" src="img/adoption/adoption1.jpg" class="hover-opacity rounded img-fluid">
+               </a>
+               <!-- photo2 -->
+               <a href="img/adoption/adoptiongallery1.jpg" title="your caption here">
+               <img alt="" src="img/adoption/adoptiongallery1.jpg" class="hover-opacity rounded img-fluid">
+               </a>
+               <!-- photo3 -->
+               <a href="img/adoption/adoptiongallery2.jpg" title="your caption here">
+               <img alt="" src="img/adoption/adoptiongallery2.jpg" class="hover-opacity rounded img-fluid">
+               </a>
+               <!-- photo4 -->
+               <a href="img/adoption/adoptiongallery3.jpg" title="your caption here">
+               <img alt="" src="img/adoption/adoptiongallery3.jpg" class="hover-opacity rounded img-fluid">
+               </a>
+            </div>
+            <!-- /adoption-gallery -->
+         </div>
+         <!-- /col-lg-12 -->
+         <div class="col-lg-12">
+            <h4 class="mt-5">Cảm ơn</h4>
+			<!-- divider -->
+			<hr class="small-divider left">
+            <div class="alert alert-danger col-lg-12 mt-5" role="alert">
+               <h6>Thông tin quan trọng</h6>
+               <p>Hãy yêu thương lấy thú cưng mà bạn nhận nuôi. Nếu bạn không có khả năng nuôi chúng, xin hãy mang đến gửi lại chúng tôi. Xin cảm ơn</p>
+            </div>
+			<!-- /alert -->
+            <!-- Button -->	
+            <div class="text-center">
+               <a href="rescue-single.html#" class="btn btn btn-secondary mt-4">Giúp đỡ</a>
+               <a href="rescue.html" class="btn btn btn-primary mt-4 ml-2">Trở lại</a>
+            </div>
+			<!-- /text-center -->
+         </div>
+         <!-- /col-lg-12 -->
+      </div>
+      <!-- /page-with-sidebar -->
+      <!-- ==== Sidebar ==== -->
+      <div id="sidebar" class="bg-light h-100 col-lg-3 card pattern3 ">
+   <div class="widget-area">
+      <h5 class="sidebar-header">Sự kiện nhận nuôi</h5>
+      <!-- event 1 -->		 
+      <div class="widget2">
+         <div class="card" >
+            <div class="card-img">
+               <!-- image event -->	
+               <a href="event-single.html">
+               <img class="card-img-top" src="img/adoption/adoptionsidebar1.jpg" alt="">
+               </a>
+            </div>
+            <!-- /card-img -->
+            <div class="card-body">
+               <!-- event info -->	
+               <a href="event-single.html">
+                  <h6 class="card-title">Hà Nội</h6>
+               </a>
+               <!-- list -->
+               <ul class="list-inline colored-icons">
+                  <li class="list-inline-item"> <span><i class="fas fa-calendar-alt mr-2"></i>8h ngày 11 tháng 3</span></li>
+                  <li class="list-inline-item">	<span><i class="fas fa-map-marker-alt mr-2"></i>Học Viện Ngân Hàng</span></li>
+               </ul>
+               <!-- button -->	
+               <div class="text-center">
+                  <a href="event-single.html" class="btn btn-primary  btn-sm mt-0">Thêm thông tin</a>
+               </div>
+            </div>
+            <!--/card-body -->	
+         </div>
+         <!-- /card -->	
+      </div>
+      <!--/widget2 -->
+   </div>
+   <!--/widget-area -->
+   <div class="widget-area">
+      <h5 class="sidebar-header">Thông tin</h5>
+      <p>Yêu thương động vật.</p>
+      <h5 class="sidebar-header">Nhận nuôi</h5>
+      <div class="widget1">
+         <!-- widget info 1 -->
+         <div class="col-lg-12">
+            <a href="adoption-single.html#">
+               <div class="widget-1-info">
+                  <!-- image -->
+                  <img src="img/adoption/adoption2.jpg"  alt="" class="img-fluid rounded">
+                  <span>Lóng</span>           
+               </div>
+            </a>
+         </div>
+         <!-- widget info 1 -->
+         <div class="col-lg-12">
+            <a href="adoption-single.html#">
+               <div class="widget-1-info">
+                  <!-- image -->
+                  <img src="img/adoption/adoption3.jpg"  alt="" class="img-fluid rounded">
+                  <span>Yoshida</span>           
+               </div>
+            </a>
+         </div>
+         <!-- widget info 1 -->
+         <div class="col-lg-12">
+            <a href="adoption-single.html#">
+               <div class="widget-1-info">
+                  <!-- image -->
+                  <img src="img/adoption/adoption5.jpg" alt="" class="img-fluid rounded">
+                  <span>Mĩ Lệ</span>           
+               </div>
+            </a>
+         </div>
+         <!-- /col-lg-12 -->
          <div class="text-center">
-            <img src="img/team/team1.jpg" class="img-fluid" alt="">
-            <ul class="social-icons text-center">
-               <li> <a href="team.php#"><i class="fab fa-facebook"></i></a></li>
-               <li> <a href="team.php#"><i class="fab fa-twitter"></i></a></li>
-               <li> <a href="team.php#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
+            <a href="adoption.html" class="btn btn-primary btn-sm">Xem tất cả</a>
          </div>
       </div>
-      <!-- Team header -->
-      <a href="team-single.php">
-         <h5 class="team-header">Laura Smith</h5>
-      </a>
-      <span>Foster</span>
-      <hr class="small-divider left"/>
-      <p>Là một người thân thiện, hòa đồng, yêu động vật</p>
+      <!-- /widget1 -->
    </div>
-   <!--/ Team member 1 -->
-   <!-- Team member 2 -->
-   <div class="team-style2 col-lg-12">
-      <!-- image and social icons -->
-      <div class="img-box">
-         <div class="text-center">
-            <img src="img/team/team2.jpg" class="img-fluid" alt="">
-         </div>
-         <ul class="social-icons text-center">
-            <li> <a href="team.php#"><i class="fab fa-facebook"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-twitter"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-linkedin"></i></a></li>
-         </ul>
-      </div>
-      <!-- Team header -->
-      <a href="team-single.php">
-         <h5 class="team-header">John Doe</h5>
-      </a>
-      <span>Vận chuyển</span>
-      <hr class="small-divider left"/>
-      <p>Là một người thân thiện, hòa đồng, yêu động vật</p>
-   </div>
-   <!--/ Team member 2-->
-   <!-- Team member 3 -->
-   <div class="team-style2 col-lg-12">
-      <!-- image and social icons -->
-      <div class="img-box">
-         <div class="text-center">
-            <img src="img/team/team3.jpg" class="img-fluid" alt="">
-         </div>
-         <ul class="social-icons text-center">
-            <li> <a href="team.php#"><i class="fab fa-facebook"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-twitter"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-linkedin"></i></a></li>
-         </ul>
-      </div>
-      <!-- Team header -->
-      <a href="team-single.php">
-         <h5 class="team-header">Meghan Smith</h5>
-      </a>
-      <span>Quản lý nhân sự</span>
-      <hr class="small-divider left"/>
-      <p>Là một người thân thiện, hòa đồng, yêu động vật</p>
-   </div>
-   <!--/ Team member 3 -->
-   <!-- Team member 4 -->
-   <div class="team-style2 col-lg-12">
-      <!-- image and social icons -->
-      <div class="img-box">
-         <div class="text-center">
-            <img src="img/team/team4.jpg" class="img-fluid" alt="">
-         </div>
-         <ul class="social-icons text-center">
-            <li> <a href="team.php#"><i class="fab fa-facebook"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-twitter"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-linkedin"></i></a></li>
-         </ul>
-      </div>
-      <!-- Team header -->
-      <a href="team-single.php">
-         <h5 class="team-header">Mika Doe</h5>
-      </a>
-      <span>Quản lý nhận nuôi</span>
-      <hr class="small-divider left"/>
-      <p>Là một người thân thiện, hòa đồng, yêu động vật</p>
-   </div>
-   <!--/ Team member 4 -->
-   <!-- Team member 5 -->
-   <div class="team-style2 col-lg-12">
-      <!-- image and social icons -->
-      <div class="img-box">
-         <div class="text-center">
-            <img src="img/team/team5.jpg" class="img-fluid" alt="">
-         </div>
-         <ul class="social-icons text-center">
-            <li> <a href="team.php#"><i class="fab fa-facebook"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-twitter"></i></a></li>
-            <li> <a href="team.php#"><i class="fab fa-linkedin"></i></a></li>
-         </ul>
-      </div>
-      <!-- Team header -->
-      <a href="team-single.php">
-         <h5 class="team-header">Jillian Smith</h5>
-      </a>
-      <span>Thủ quỹ</span>
-      <hr class="small-divider left"/>
-      <p>Là một người thân thiện, hòa đồng, yêu động vật</p>
-   </div>
-   <!--/ Team member 5 -->
+   <!-- /widget-area -->
 </div>
- <!--/col-md-12 -->
-         </div>
-      </div>
-      <!-- /container -->   
-   </div>
-   <!-- /bg-light-custom -->
-<!-- /page --><!-- ==== Newsletter - call to action ==== -->
-<div class="container-fluid footer-bg block-padding overlay">
+<!-- /sidebar -->   </div>
+   <!-- /row -->
+</div>
+<!-- /page --><!-- ==== Newsletter - call to action ==== --><div class="container-fluid footer-bg block-padding overlay">
    <div class="container">
       <div class="col-lg-5 text-light text-center">
          <h4>Theo dõi để nhận những thông tin mới nhất về những ca nhận nuôi mới</h4>
@@ -413,9 +459,9 @@
             <img src="img/logo.png"  class="logo-footer img-fluid" alt=""/>
             <!-- Start Social Links -->
             <ul class="social-list text-center list-inline">
-               <li class="list-inline-item"><a title="Facebook" href="events.php#"><i class="fab fa-facebook-f"></i></a></li>
-               <li class="list-inline-item"><a title="Twitter" href="events.php#"><i class="fab fa-twitter"></i></a></li>
-               <li class="list-inline-item"><a  title="Instagram" href="events.php#"><i class="fab fa-instagram"></i></a></li>
+               <li class="list-inline-item"><a title="Facebook" href="events.html#"><i class="fab fa-facebook-f"></i></a></li>
+               <li class="list-inline-item"><a title="Twitter" href="events.html#"><i class="fab fa-twitter"></i></a></li>
+               <li class="list-inline-item"><a  title="Instagram" href="events.html#"><i class="fab fa-instagram"></i></a></li>
             </ul>
             <!-- /End Social Links -->
          </div>
@@ -432,8 +478,8 @@
             <!--divider -->
             <hr class="small-divider left"/>
             <ul class="list-unstyled mt-3">
-               <li class="mb-1"><i class="fas fa-phone margin-icon "></i>0936 100 573</li>
-               <li class="mb-1"><i class="fas fa-envelope margin-icon"></i><a href="mailto:email@yoursite.com">email@catndog.com</a></li>
+               <li class="mb-1"><i class="fas fa-phone margin-icon "></i>(+84) 456-7889</li>
+               <li class="mb-1"><i class="fas fa-envelope margin-icon"></i><a href="mailto:email@yoursite.com">email@hotro.com</a></li>
                <li><i class="fas fa-map-marker margin-icon"></i>Học viện Ngân hàng</li>
             </ul>
             <!--/ul -->
@@ -464,7 +510,7 @@
    <!--/ container -->
    <!-- Go To Top Link -->
    <div class="page-scroll hidden-sm hidden-xs">
-      <a href="events.php#top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+      <a href="rescue-single.html#top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
    </div>
    <!--/page-scroll-->
 </footer>

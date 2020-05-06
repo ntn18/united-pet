@@ -19,6 +19,9 @@
     <?php $this->load->view('home/layouts/home/intro_home')?>
     <!-- /section ends -->
     <!-- section -->
+    <?php $this->load->view('home/layouts/home/rescue_home')?>
+    <!-- /section ends -->
+    <!-- section -->
     <?php $this->load->view('home/layouts/home/call_widget')?>
     <!-- /section-->
     <!-- section -->

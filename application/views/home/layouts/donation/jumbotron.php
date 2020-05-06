@@ -3,12 +3,12 @@
    <div class="container" >
       <!-- jumbo-heading -->
       <div class="jumbo-heading" data-aos="fade-up">
-         <h1>Giới thiệu</h1>
+         <h1>Quyên góp</h1>
          <!-- Breadcrumbs -->
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-               <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+               <li class="breadcrumb-item"><a href="<?=base_url();?>trang_chu">Trang chủ</a></li>
+               <li class="breadcrumb-item active" aria-current="page">Quyên góp</li>
             </ol>
          </nav>
          <!-- /breadcrumb -->

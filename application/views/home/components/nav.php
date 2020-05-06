@@ -56,7 +56,6 @@
                                 <div class="dropdown-menu pattern2" aria-labelledby="about-dropdown">
                                     <a class="dropdown-item" href="<?=base_url();?>gioi_thieu">Giới thiệu</a>
                                     <a class="dropdown-item" href="<?=base_url();?>doi_ngu">Đội ngũ tình nguyện</a>
-                                    <a class="dropdown-item" href="<?=base_url();?>su_kien">Sự kiện</a>
                                 </div>
                             </li>
 
