@@ -36,7 +36,7 @@
                         <?php foreach ($danh_sach as $key => $row) {;?>
                         <div class="card-body py-3">        
                             <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->id;?></a></div>
+                                <div class="col"><a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xem/<?=$row->chu_nuoi_id;?>" class="text-big font-weight-semibold"><?=$row->chu_nuoi_id;?></a></div>
                                 <div class="d-none d-md-block col-6">        
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-3">
@@ -49,14 +49,14 @@
                                             </div>
                                         </div>                                        
                                         <div class="col-3">
-                                            <a href="<?=base_url();?>admin/quan_tri_chu_nuoi/sua/<?=$row->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_chu_nuoi/sua/<?=$row->chu_nuoi_id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Sửa</span>
                                                 <span class="ladda-spinner"></span>
                                                 <div class="ladda-progress" style="width: 0px;"></div>
                                             </button>
                                             </a>
-                                            <a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xoa/<?=$row->id;?>">
+                                            <a href="<?=base_url();?>admin/quan_tri_chu_nuoi/xoa/<?=$row->chu_nuoi_id;?>">
                                             <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                 <span class="ladda-label">Xóa</span>
                                                 <span class="ladda-spinner"></span>
