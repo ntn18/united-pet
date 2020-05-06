@@ -17,7 +17,7 @@
 			// Viết câu lệnh truy vấn SQL lấy các tin tức
 			$query = $this->db->query("
 				SELECT * 
-				FROM tbl_chu_nuoi inner join tbl_pet on tbl_chu_nuoi.id = tbl_pet.chu_nuoi_id
+				FROM tbl_chu_nuoi inner join tbl_pet on tbl_chu_nuoi.chu_nuoi_id = tbl_pet.chu_nuoi_id
 				WHERE id=".$id
 			);
 
@@ -136,7 +136,7 @@
 		public function xoa_chu_nuoi($id)
         {
 			// Thực hiện việc xóa dữ liệu
-			$this->db->where('id', $id);
+			$this->db->where('chu_nuoi_id', $id);
 			$this->db->delete('tbl_chu_nuoi');
 		}
 		
