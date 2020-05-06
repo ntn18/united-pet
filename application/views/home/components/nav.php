@@ -69,6 +69,9 @@
                                 </div>
                             </li>
                             <!-- menu item -->
+                             <li class="nav-item">
+                                <a class="nav-link" href="<?=base_url();?>cuu_ho">Cứu hộ</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?=base_url();?>tinh_nguyen">Tình nguyện</a>
                             </li>
