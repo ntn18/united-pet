@@ -17,7 +17,7 @@
                         <!--the div below is hidden on small screens  -->
                         <div class="hidden-small">
                             <p class="header-p">Ở đây chúng tôi có những bạn nhỏ cần được yêu thương...</p>
-                            <a class="btn btn-primary " href="adoption.html">Nhận nuôi ngay</a>
+                            <a class="btn btn-primary " href="<?=base_url().'Nhan_nuoi';?>">Nhận nuôi ngay</a>
                         </div>
                         <!--/d-none  -->
                     </div>

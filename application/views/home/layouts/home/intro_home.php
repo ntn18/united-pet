@@ -10,7 +10,7 @@
                 <!-- /col-lg-->
                 <div class="col-lg-3 justify-content-center align-self-center">
                     <!-- button -->
-                    <a href="donation.html" class="btn btn-secondary" data-aos="zoom-out">Quyên góp</a>
+                    <a  href="<?=base_url().'Quyen_gop';?>" class="btn btn-secondary" data-aos="zoom-out">Quyên góp</a>
                 </div>
                 <!-- /col-lg-->
             </div>

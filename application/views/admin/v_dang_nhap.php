@@ -67,7 +67,7 @@
                                     <div class="divider row"></div>
                                     <div class="d-flex align-items-center">
                                         <div class="ml-auto">
-                                            <a href="./quen_mat_khau.html" class="btn-lg btn btn-link">Quên mật khẩu</a>
+                                            <!-- <a href="./quen_mat_khau.html" class="btn-lg btn btn-link">Quên mật khẩu</a> -->
                                             <input class="btn btn-primary btn-lg" type="submit" value="Đăng nhập">
                                         </div>
                                     </div>

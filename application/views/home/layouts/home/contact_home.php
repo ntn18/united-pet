@@ -16,26 +16,27 @@
                             <!-- envelope icon-->
                             <i class="fas fa-envelope bg-secondary"></i>
                         </div>
-                        <h4 class="text-center mt-3 text-light">Gửi tin nhắn cho chúng tôi</h4>
+                        <h4 class="text-center mt-3 text-light">Gửi tin nhắn cho chúng tôi</h4> 
                         <!-- Form Starts -->
                         <div id="contact_form">
                             <div class="form-group">
+                                <form method="POST" enctype="multipart/form-data" action="<?=base_url().'admin/quan_tri_phan_hoi/thuc_hien_them_moi_phan_hoi';?>">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label>Tên <span class="required">*</span></label>
-                                        <input type="text" name="name" class="form-control input-field" required="">
+                                        <input type="text" name="txtHoTen" class="form-control input-field" required="">
                                     </div>
                                     <div class="col-md-12">
                                         <label>Email <span class="required">*</span></label>
-                                        <input type="email" name="email" class="form-control input-field" required="">
+                                        <input type="email" name="txtEmail" class="form-control input-field" required="">
                                     </div>
                                     <div class="col-md-12">
                                         <label>Tiêu đề</label>
-                                        <input type="text" name="subject" class="form-control input-field">
+                                        <input type="text" name="txtTieuDe" class="form-control input-field">
                                     </div>
                                     <div class="col-md-12">
                                         <label>Tin nhắn<span class="required">*</span></label>
-                                        <textarea name="message" id="message" class="textarea-field form-control"
+                                        <textarea name="txtLoiNhan" id="message" class="textarea-field form-control"
                                             rows="3" required=""></textarea>
                                     </div>
                                 </div>

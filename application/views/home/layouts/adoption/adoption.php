@@ -4,7 +4,7 @@
          <h2>Nhận nuôi</h2>
          <p class="mt-4">Hãy nhận nuôi một chú thú cưng, cho chúng một ngôi nhà và nồi lẩu.
          </p>
-         <p class="font-weight-bold">Nếu bạn có thêm câu hỏi thắc mắc, hãy <a href="https://www.ingridkuhn.com/contact.php">Liên hệ với chúng tôi</a>
+         <p class="font-weight-bold">Nếu bạn có thêm câu hỏi thắc mắc, hãy <a href="<?=base_url().'Lien_he';?>">Liên hệ với chúng tôi</a>
          </p>
       </div>
 	  <!-- /col-lg -->
