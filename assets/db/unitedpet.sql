@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 05, 2020 lúc 10:52 PM
+-- Thời gian đã tạo: Th5 06, 2020 lúc 07:56 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.3
 
@@ -46,7 +46,7 @@ CREATE TABLE `tbl_case` (
 --
 
 INSERT INTO `tbl_case` (`case_id`, `ng_bao_tin`, `sdt`, `dia_diem_cuu`, `thoi_gian`, `loai_pet_id`, `tinh_trang`, `muc_do_id`, `tiep_nhan_id`, `ghi_chu`) VALUES
-(1, NULL, NULL, 'Hà Nội', '2020-05-05 20:41:13', 1, 'Bỏ rơi', 2, 2, NULL),
+(1, 'Trịnh E', '', 'Hà Nội', '2020-05-05 20:41:13', 1, 'Bỏ rơi', 1, 1, ''),
 (2, NULL, NULL, 'Hà Đông', '2020-05-05 20:41:13', 2, 'Cấp cứu', 2, 2, NULL);
 
 -- --------------------------------------------------------
@@ -209,7 +209,9 @@ CREATE TABLE `tbl_pet` (
 
 INSERT INTO `tbl_pet` (`pet_id`, `ten_pet`, `loai_pet_id`, `giong`, `xu_ly_id`, `mo_ta`, `chu_nuoi_id`, `anh`) VALUES
 (1, 'Mon', 2, 'Lai', 2, 'Mon xinh gái', 1, NULL),
-(2, 'Min', 1, 'Lai', 1, 'Min đập lọ', NULL, NULL);
+(2, 'Min', 1, 'Lai', 1, 'Min đập lọ', NULL, NULL),
+(4, 'Mắm', 1, 'Bít bun', 1, 'Cực kì ngầu lòi', 0, ''),
+(5, '', 2, '', 2, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -224,6 +226,14 @@ CREATE TABLE `tbl_phan_hoi` (
   `tieu_de` varchar(200) DEFAULT NULL,
   `noi_dung` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_phan_hoi`
+--
+
+INSERT INTO `tbl_phan_hoi` (`id`, `ten`, `email`, `tieu_de`, `noi_dung`) VALUES
+(1, 'Test', 'Test', 'Test', 'Test'),
+(2, 'Test1', 'Test1', 'Test1', 'Test1');
 
 -- --------------------------------------------------------
 
@@ -241,6 +251,13 @@ CREATE TABLE `tbl_story` (
   `anh` varchar(200) NOT NULL,
   `ghi_chu` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_story`
+--
+
+INSERT INTO `tbl_story` (`id`, `tieu_de`, `ngay`, `tac_gia`, `mo_ta`, `noi_dung`, `anh`, `ghi_chu`) VALUES
+(1, 'Test', '2020-05-06 04:29:14', 'lamtt@gmail.com', 'Test', 'Test', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -289,7 +306,8 @@ INSERT INTO `tbl_user` (`id`, `ho_ten`, `gioi_tinh_id`, `dia_chi`, `sdt`, `email
 (2, 'Ngọc Anh', 0, '', '', 'anhnn@gmail.com', '1', 0, NULL, NULL),
 (3, 'Đan Chi', 0, '', '', 'chittd@gmail.com', '1', 0, NULL, NULL),
 (4, 'Hoàng Dung', 0, '', '', 'dunght@gmail.com', '1', 0, NULL, NULL),
-(5, 'Lâm Trần', 0, '', '', 'lamtt@gmail.com', '1', 0, NULL, NULL);
+(5, 'Lâm Trần', 0, '', '', 'lamtt@gmail.com', '1', 0, NULL, NULL),
+(6, 'admin', 1, 'admin', 'admin', 'admin', 'admin123', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -303,6 +321,14 @@ CREATE TABLE `tbl_vi_tri` (
   `dac_diem` text DEFAULT NULL,
   `mo_ta` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_vi_tri`
+--
+
+INSERT INTO `tbl_vi_tri` (`vi_tri_id`, `ten_vi_tri`, `dac_diem`, `mo_ta`) VALUES
+(1, 'Tình nguyện viên', 'Làm việc', 'Cứu hộ'),
+(2, 'Quản lý', 'Quản lý', 'Quản lý');
 
 -- --------------------------------------------------------
 
@@ -419,19 +445,19 @@ ALTER TABLE `tbl_xu_ly`
 -- AUTO_INCREMENT cho bảng `tbl_case`
 --
 ALTER TABLE `tbl_case`
-  MODIFY `case_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `case_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_chu_nuoi`
 --
 ALTER TABLE `tbl_chu_nuoi`
-  MODIFY `chu_nuoi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `chu_nuoi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_dki_tnv`
 --
 ALTER TABLE `tbl_dki_tnv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_gioi_tinh`
@@ -461,19 +487,19 @@ ALTER TABLE `tbl_news`
 -- AUTO_INCREMENT cho bảng `tbl_pet`
 --
 ALTER TABLE `tbl_pet`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_phan_hoi`
 --
 ALTER TABLE `tbl_phan_hoi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_story`
 --
 ALTER TABLE `tbl_story`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_tiep_nhan`
@@ -485,13 +511,13 @@ ALTER TABLE `tbl_tiep_nhan`
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_vi_tri`
 --
 ALTER TABLE `tbl_vi_tri`
-  MODIFY `vi_tri_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vi_tri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_xu_ly`
