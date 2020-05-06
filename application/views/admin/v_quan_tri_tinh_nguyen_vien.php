@@ -35,20 +35,21 @@
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($danh_sach as $key => $row) {;?>
-                        <div class="card-body py-3">        
+                        
+                        <div class="card-body py-3"> 
+                        <?php foreach ($danh_sach as $key => $row) {;?>       
                             <div class="row no-gutters align-items-center">
                                 <div class="col-3">
                                     <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/xem/<?=$row->id;?>" class="text-big font-weight-semibold"><?=$row->ho_ten;?></a>
                                 </div>
-                                <div class="d-none d-md-block col-7">        
-                                    <div class="row no-gutters align-items-center col-12">
-                                            <div class="media-body flex-truncate ml-3">
-                                                <?php if($row->gioi_tinh_id== 1 ) echo"Nam";
-                                                    else echo "Nữ";
-                                                ?>
-                                            </div>
-                                        <div class="col-2">
+                                <div class="d-none d-md-block col-9">        
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="media-body col-3 flex-truncate">
+                                            <?php if($row->gioi_tinh_id== 1 ) echo"Nam";
+                                                else echo "Nữ";
+                                            ?>
+                                        </div>
+                                        <div class="col-3">
                                             <a href="javascript:void(0)" class="d-block text-truncate">
                                                 <?php
                                                 foreach ($viTri as $key1 => $value1) {
@@ -59,17 +60,12 @@
                                             </a>
                                         </div>
                                         <div class="media col-3 align-items-center">
-                                            <div class="media-body flex-truncate ml-3">
+                                            <div class="media-body flex-truncates">
                                                 <?=$row->dob;?>
                                             </div>
-<!--                                         </div>  
-                                            <div class="media col-6 align-items-center">
-                                            <div class="media-body flex-truncate ml-2">
-                                                <?=$row->Thao_tac;?>
-                                            </div>
-                                        </div> -->                                       
+                                        </div>                                      
                                         <div class="col-3 row">
-                                            <div class="col-6">
+                                            <div class="">
                                             <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/sua/<?=$row->id;?>">
                                                 <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                     <span class="ladda-label">Sửa</span>
@@ -78,7 +74,7 @@
                                                 </button>
                                             </a>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="">
                                                 <a href="<?=base_url();?>admin/quan_tri_tinh_nguyen_vien/xoa/<?=$row->id;?>">
                                                     <button class="ladda-button mb-2 mr-2 btn btn-danger" data-style="expand-right">
                                                         <span class="ladda-label">Xóa</span>
@@ -90,7 +86,7 @@
                                             
                                         </div>    
                                     </div>        
-                                </div>
+                                
                             </div>        
                         </div>
                         <?php   
